@@ -1,5 +1,7 @@
 # Post instalación KDE Neon 5.17
 
+![KDE Neon](../img/neon-5.17.png)
+
 ## Apariencia.
 
 Configuramos panel de arriba para mostrar el menú de la aplicación activa y una
