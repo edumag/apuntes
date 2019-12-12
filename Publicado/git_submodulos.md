@@ -34,3 +34,6 @@ Ejemplo:
 git submodule add git@gitlab.com:edumag/lesolivex-wt.git wp-content/themes/lesolivex
 ```
 
+## Referencias
+
+- https://www.git-scm.com/book/es/v2/Herramientas-de-Git-Subm%C3%B3dulos
