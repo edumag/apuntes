@@ -107,7 +107,7 @@ sed -e 's/https:\/\/DOMINIO\.com/http:\/\/localhost:8001/g' DOMINIO-servidor.sql
 Ejecutamos importación:
 
 ```
-docker exec -i mysql-container mysql -uuser -ppassword name_db < DOMINIO-local.sql
+docker exec -i mysql-container mysql -uuser -phttps://www.youtube.com/watch?v=ZOn1xwSUsSApassword name_db < DOMINIO-local.sql
 ```
 
 Nota:
@@ -127,8 +127,6 @@ Crear base de datos:
 ```
 docker exec -i mysql-container mysql -uuser -ppassword -e 'CREATE DATABASE wordpress character set utf8;'
 ```
-
-
 
 ### Depurar.
 
@@ -159,5 +157,3 @@ Ejecutamos:
 sudo docker exec -ti APPNAME bash
 tail -f wp-content/debug.log
 ```
-
-
