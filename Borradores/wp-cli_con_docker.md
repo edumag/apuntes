@@ -1,7 +1,6 @@
 # WP-CLI con Docker
 
-Para poder tener wp-cli en local utilizaremos una imagen de wordpress
-que lo contenga.
+Para poder tener wp-cli en local utilizaremos una imagen de wordpress que lo contenga.
 
 ## Fichero docker-compose.yml:
 

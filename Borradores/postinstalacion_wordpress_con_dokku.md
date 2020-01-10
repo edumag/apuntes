@@ -39,9 +39,8 @@ Instalamos Contact Form 7 Contact From 7 captcha.
 
 Y activamos recaptcha v2 desde la sección de integración de la extensión.
 
-@todo Falta hacer formularios personalizados según idioma.
+Hacer formularios personalizados según idioma.
 
-@todo Y añadir enlace a contacto según idioma en que estamos.
 
 ### SMTP
 
@@ -53,20 +52,14 @@ Instalamos y activamos plugin "Anti-spam".
 
 ### Redes sociales.
 
-#### Instalamos "Feed them social" que nos permite visualizar las últimas entradas
-de nuestras redes.
+Instalamos "Feed them social" que nos permite visualizar las últimas entradas de nuestras redes.
 
-#### Instalamos "Easy Social Icons" para mostrar los botones para seguirnos en
-nuestras redes.
+Instalamos "Easy Social Icons" para mostrar los botones para seguirnos en nuestras redes.
 
 #### Referencias:
 
 - [funtor.com](https://funtor.com/sitios-web-multi-idioma-divi-polylang/)
 
-### Galería de imágenes.
 
-### Pagina de contacto.
-
-### Activar la publicación automática de los post en redes sociales.
 
 
