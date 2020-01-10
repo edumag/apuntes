@@ -4,6 +4,15 @@ Ejemplo de aplicación creada con ionic desde ubuntu o en mi caso derivada.
 
 Instalamos node, android studio, ioinc y subimos a nuestro servidor con [dokku](https://lesolivex.com/?s=dokku).
 
+![Formato web](../img/laselvatv-web.png)
+
+Formato web
+
+![Formato movil](../img/laselvatv-movil.png)
+
+Formato movil
+
+
 ## Instalación
 
 ### Limpieza
