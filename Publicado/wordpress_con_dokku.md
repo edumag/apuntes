@@ -1,5 +1,8 @@
 # Wordpress con dokku
 
+**Actualización**: abril del 2020
+
+
 ## VPS
 
 Contratamos maquina virtual con OVH.
@@ -55,15 +58,11 @@ dokku mysql:create gmdb
 Creamos volúmenes:
 
 ```
-mkdir -p /var/lib/dokku/data/storage/TUDOMINIO/uploads
-mkdir -p /var/lib/dokku/data/storage/TUDOMINIO/plugins
-mkdir -p /var/lib/dokku/data/storage/TUDOMINIO/languages
+sudo mkdir -p /var/lib/dokku/data/storage/TUDOMINIO/uploads
 
-chmod -R 755 /var/lib/dokku/data/storage/
+sudo chmod -R 755 /var/lib/dokku/data/storage/
 
-dokku storage:mount TUDOMINIO /var/lib/dokku/data/storage/TUDOMINIO/plugins/:/app/wp-content/plugins/
 dokku storage:mount TUDOMINIO /var/lib/dokku/data/storage/TUDOMINIO/uploads/:/app/wp-content/uploads/
-dokku storage:mount TUDOMINIO /var/lib/dokku/data/storage/TUDOMINIO/languages/:/app/wp-content/languages
 ```
 
 #### Conexión con base de datos en dokku
@@ -73,7 +72,7 @@ dokku mysql:link gmdb TUDOMINIO
 ```
 
 Creado el enlace entre la aplicación y el servicio de la base de datos,
-tendremos en el fichero .env de la aplicación la información para conectar con
+tendremos en el fichero /home/dokku/TUDOMINIO/ENV de la aplicación la información para conectar con
 ella en forma de variable de entorno que aprovecharemos más adelante para
 recoger y conectar con la base de datos.
 
@@ -140,51 +139,87 @@ Creamos compser.json:
 Creamos fichero nginx_app.conf:
 
 ```
-# WordPress permalinks
-location / {
-  index index.php index.html;
-  try_files $uri $uri/ /index.php?$args;
+# WordPress permalinks                                                          
+location / {                                                                    
+  index index.php index.html;                                                   
+  try_files $uri $uri/ /index.php?$args;                                        
+}  
+
+# Add trailing slash to */wp-admin requests.                                    
+rewrite /wp-admin$ $scheme://$host$uri/ permanent;                              
+                                                                                
+# Deny access to any files with a .php extension in the uploads directory       
+# Works in sub-directory installs and also in multisite network                 
+location ~* /(?:uploads|files)/.*.php$ {                                        
+  deny all;                                                                     
+}                                                                               
+                                                                                
+#upload                                                                         
+client_max_body_size 100M;                                                      
+                                                                                
+#jetpack connection                                                             
+fastcgi_buffers 8 32k;                                                          
+fastcgi_buffer_size 64k;                                                        
+proxy_buffer_size 128k;                                                         
+proxy_buffers 4 256k;                                                           
+proxy_busy_buffers_size 256k;                                                   
+proxy_read_timeout 300;
+                                                                                
+# enable gzip compression                                                       
+gzip on;                                                                        
+# Minimum file size in bytes (really small files aren’t worth compressing)      
+gzip_min_length 1000;                                                           
+# Compression level, 1-9                                                        
+gzip_comp_level 2;                                                              
+gzip_buffers 4 32k;                                                             
+gzip_types text/plain application/javascript text/xml text/css image/svg+xml;   
+# Insert `Vary: Accept-Encoding` header, as specified in HTTP1.1 protocol       
+gzip_vary on;                                                                   
+# end gzip configuration                                                        
+                                                                                
+# Set time to expire for headers on assets                                      
+location ~* .(js|css|png|jpg|jpeg|gif|ico|svg)$ {                               
+  expires 1y;                                                                   
+}                                                                               
+                                                                                
+# Sitemap url, for WordPress SEO plugin                                         
+#rewrite ^/sitemap_index.xml$ /index.php?sitemap=1 last;                        
+#rewrite ^/([^/]+?)-sitemap([0-9]+)?.xml$ /index.php?sitemap=$1&sitemap_n=$2 last;
+
+# Global restrictions configuration file.
+# Designed to be included in any server {} block.
+location = /favicon.ico {
+ log_not_found off;
+ access_log off;
+}
+
+location = /robots.txt {
+ allow all;
+ log_not_found off;
+ access_log off;
+}
+
+# Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
+# Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+location ~ /\. {
+ deny all;
+}
+
+# Deny access to any files with a .php extension in the uploads directory
+# Works in sub-directory installs and also in multisite network
+# Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+location ~* /(?:uploads|files)/.*\.php$ {
+ deny all;
 }
 
 # Add trailing slash to */wp-admin requests.
 rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 
-# Deny access to any files with a .php extension in the uploads directory
-# Works in sub-directory installs and also in multisite network
-location ~* /(?:uploads|files)/.*.php$ {
-  deny all;
+# Directives to send expires headers and turn off 404 error logging.
+location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+ access_log off; log_not_found off; expires max;
 }
 
-#upload
-client_max_body_size 100M;
-
-#jetpack connection
-fastcgi_buffers 8 32k;
-fastcgi_buffer_size 64k;
-proxy_buffer_size 128k;
-proxy_buffers 4 256k;
-proxy_busy_buffers_size 256k;
-
-# enable gzip compression
-gzip on;
-# Minimum file size in bytes (really small files aren’t worth compressing)
-gzip_min_length 1000;
-# Compression level, 1-9
-gzip_comp_level 2;
-gzip_buffers 4 32k;
-gzip_types text/plain application/javascript text/xml text/css image/svg+xml;
-# Insert `Vary: Accept-Encoding` header, as specified in HTTP1.1 protocol
-gzip_vary on;
-# end gzip configuration
-
-# Set time to expire for headers on assets
-location ~* .(js|css|png|jpg|jpeg|gif|ico|svg)$ {
-  expires 1y;
-}
-
-# Sitemap url, for WordPress SEO plugin
-#rewrite ^/sitemap_index.xml$ /index.php?sitemap=1 last;
-#rewrite ^/([^/]+?)-sitemap([0-9]+)?.xml$ /index.php?sitemap=$1&sitemap_n=$2 last;
 ```
 
 Creamos fichero custom_php.ini
