@@ -17,3 +17,9 @@ ens torni a preguntar.
 
 D'aquesta manera ja podem treballar sense que ens pregunti cada vegada que la
 utilitzem.
+
+En caso de querer cambiar la conreaseña podemos gestionarla desde:
+
+`kwalletmanager5`
+
+

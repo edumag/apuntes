@@ -145,9 +145,15 @@ Copiamos configuración por defecto a fichero personalizado.
 
 `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`
 
-Añadimos reglas:
+Editar configuración:
 
 `sudo vim /etc/fail2ban/jail.local`
+
+Podemos añadir una lista de IPs para que sean ignoradas:
+
+	ignoreip = 127.0.0.1/8 ::1 
+
+Añadimos reglas para los wordpress:
 
     [ssh]
     enabled  = true
