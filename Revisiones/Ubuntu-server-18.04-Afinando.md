@@ -1,6 +1,6 @@
 # Afinando ubuntu server 18.04
 
-![LongCheck](/home/edu/Imágenes/longcheck.png  "LongCheck")
+![LongCheck](../img/longcheck.png  "LongCheck")
 
 Una vez instalado logcheck vamos recibiendo avisos de algunas cosas importantes que debemos ajustar y en caso de ser imoprtantes ignorarlas.
 
@@ -121,5 +121,43 @@ Servidor actualizando la hora del sistema.
 Ips bloqueadas, son demasiadas.
 
 
+## Configuración de postfix
+
+Nos llegan avisos de postfix:
+
+```
+Apr 23 13:45:20 vps713357 postfix/smtpd[22431]: warning: hostname 172-245-92-96-host.colocrossing.com does not resolve to address 172.245.92.96: Name or service not known
+Apr 23 13:45:21 vps713357 postfix/smtpd[22431]: disconnect from unknown[172.245.92.96] ehlo=1 mail=1 rcpt=0/1 rset=1 commands=3/4
+```
+
+Modificamos configuración para que no acepte correo del exterior.
+
+### /etc/postfix/main.cf
+
+    inet_interfaces = loopback-only
+
+### /etc/aliases
+
+    mailer-daemon: postmaster
+    root: edu@lesolivex.com
+    postmaster: root
+    logcheck: root
+    nobody: root
+    hostmaster: root
+    usenet: root
+    news: root
+    webmaster: root
+    www: root
+    ftp: root
+    abuse: root
+    noc: root
+    security: root
+
+Activamos los nuevos alias y reiniciamos servidor postfix.
+
+```
+sudo newaliases
+sudo systemctl restart postfix
+```
 
 
