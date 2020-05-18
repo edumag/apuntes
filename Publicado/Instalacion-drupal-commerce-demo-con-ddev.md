@@ -1,6 +1,6 @@
-"Title : Instalación de drupal con ddev
+# Instalación de drupal con ddev
 
-![Instalación drupal commerce demo con ddev](../img/Instalacion_commerce_ddev-01.png)
+![Instalación drupal commerce demo con ddev](https://gitlab.com/edumag/apuntes/-/raw/master/img/Instalacion_commerce_ddev-01.png)
 
 Hacemos una instalación demo de drupal commerce en local.
 
@@ -29,7 +29,7 @@ ddev restart
 
 https://$SITE_NAME.ddev.site
 
-![Instalación](../img/Instalacion_commerce_ddev-02.png)
+![Instalación](https://gitlab.com/edumag/apuntes/-/raw/master/img/Instalacion_commerce_ddev-01.png)
 
 ## MailHog
 
