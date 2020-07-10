@@ -1,6 +1,6 @@
 # Crear virtual host en local con apache
 
-![](/home/edumag/MEGAsync/apuntes/img/VirtualHost-apache-local/VirtualHost-apache-local-01.png)
+![](../img/VirtualHost-apache-local/VirtualHost-apache-local-01.png)
 
 ## Instalación de apache
 
