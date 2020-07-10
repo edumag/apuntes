@@ -41,12 +41,16 @@ cd /etc/apache2/sites-available/
 
 ## Activamos configuración
 
+```
 sudo a2ensite localvirtualhost.conf
 sudo systemctl restart apache2
+```
 
 ## Permisos
 
+```
 sudo chgrp -R www-data $DIR_PROYECTO
 sudo chmod -R 775 $DIR_PROYECTO/storage
+```
 
 
