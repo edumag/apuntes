@@ -49,7 +49,7 @@ ddev start
 En caso de iniciar un proyecto desde cero.
 
 ```
-ddev config --project-type=laravel --project-name=$PROYECTO --docroot=public
+ddev config --project-type=laravel --project-name=$PROYECTO --docroot=public --create-docroot
 ddev start
 ddev composer create --prefer-dist laravel/laravel
 ddev composer install
@@ -78,6 +78,7 @@ DB_PASSWORD=db
 ## Puesta en marcha.
 
 ```
+chmod +x artisan
 ddev exec ./artisan key:generate
 ddev exec ./artisan migrate:fresh --seed
 ```
