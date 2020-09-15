@@ -2,7 +2,9 @@
 
 
 
-![](../img/laravel-ddev/laravel-ddev-01.png)Vamos a mostrar como tener un entorno de desarrollo en local con laravel en menos de 5 mínutos.
+![](../img/laravel-ddev/laravel-ddev-01.png)
+
+Vamos a mostrar como tener un entorno de desarrollo en local con laravel en menos de 5 mínutos.
 
 Para ello vamos a utilizar ddev una pequeña pero potente herramienta que nos permite tener nuestro entorno de desarrollo:
 
@@ -81,6 +83,41 @@ DB_PASSWORD=db
 chmod +x artisan
 ddev exec ./artisan key:generate
 ddev exec ./artisan migrate:fresh --seed
+```
+
+## Depuración con vscode
+
+Instalamos la extensión php-debug en vscode.
+
+Configuración:
+
+```
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "hostname": "0.0.0.0",
+            "pathMappings": {
+                "/var/www/html": "${workspaceRoot}"
+            }
+        },
+        {
+            "name": "Launch currently open script",
+            "type": "php",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 9000
+        }
+    ]
+}
 ```
 
 ## ddev describe
