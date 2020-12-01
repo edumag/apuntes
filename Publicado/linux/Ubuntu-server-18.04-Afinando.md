@@ -1,6 +1,6 @@
 # Afinando ubuntu server 18.04
 
-![LongCheck](../img/longcheck.png  "LongCheck")
+![LongCheck](./img/longcheck.png  "LongCheck")
 
 Una vez instalado logcheck vamos recibiendo avisos de algunas cosas importantes que debemos ajustar y en caso de ser imoprtantes ignorarlas.
 

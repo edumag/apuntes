@@ -1,6 +1,6 @@
 # Gestión de roles y permisos para grupos desde laravel con laratrust
 
-![](../img/laravel-roles-permisos-grupos-01.png)
+![](./img/laravel-roles-permisos-grupos-01.png)
 
 Utilizamos el paquete laratrust para poder gestionar roles por grupos.
 

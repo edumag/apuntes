@@ -4,7 +4,7 @@ Gestionar correo desde consola.
 
 http://www.mutt.org/
 
-![Mutt](../img/mutt-01.png)
+![Mutt](./img/mutt-01.png)
 
 Mutt nos permite administrar nuestro correo desde consola, de esta manera evitamos lanzar aplicaciones que nos consuman mucha memoria.
 

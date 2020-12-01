@@ -2,7 +2,7 @@
 
 
 
-![](../img/joomla-local-1-minuto/joomla-local-1-minuto-01.png)
+![](./img/joomla-local-1-minuto/joomla-local-1-minuto-01.png)
 
 
 

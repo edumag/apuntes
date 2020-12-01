@@ -2,7 +2,7 @@
 
 
 
-![](../img/laravel-ddev/laravel-ddev-01.png)
+![](./img/laravel-ddev/laravel-ddev-01.png)
 
 Vamos a mostrar como tener un entorno de desarrollo en local con laravel en menos de 5 mínutos.
 

@@ -1,6 +1,6 @@
 # Post instalación KDE Neon 5.17
 
-![KDE Neon](../img/neon-5.17.png)
+![KDE Neon](./img/neon-5.17.png)
 
 ## Apariencia.
 

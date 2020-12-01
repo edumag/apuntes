@@ -2,7 +2,7 @@
 
 
 
-![NextcloudCasa](../img/NC-01.png) 
+![NextcloudCasa](./img/NC-01.png) 
 
 Instalamos un nextcloud en la computadora de casa pero al estar dentro de guifiNet no tengo acceso desde internet.
 
