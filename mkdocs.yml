@@ -1,0 +1,59 @@
+site_name: Apuntes
+
+site_author: Eduardo Magrané
+site_description: >-
+  Página con apuntes de programación y linux
+
+site_url: https://lesolivex.com/apuntes
+docs_dir: docs/
+
+theme:
+  name: material
+  language: es
+
+  features:
+    - navigation.top
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.indexes
+    - header.autohide
+    - content.code.copy
+    - navigation.footer
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+        markdown_extensions:
+          - pymdownx.highlight:
+            anchor_linenums: true
+          - pymdownx.inlinehilite
+          - pymdownx.snippets
+          - pymdownx.superfences
+          - admonition
+          - pymdownx.details
+          - pymdownx.keys
+            #- toc:
+            #    toc_depth: 0
+
+        plugins:
+          - search
+
+        copyright: danimrprofe 2022
+
+        extra:
+          social:
+            - icon: fontawesome/brands/github-alt
+              link: https://github.com/danimrprofe/
+
+              extra_css:
+                - stylesheets/extra.css

@@ -2,7 +2,7 @@
 
 Os presentamos al proyecto EMMA de código abierto.
 
-![](../img/emma-01.png)
+![](./img/emma-01.png)
 
 Un desarrollo creado en python para facilitar el traiding en cualquier exchange soportado por la librería ccxt.
 
@@ -54,7 +54,7 @@ Establecer diferentes stoptrailing por cada operación o por estrategia.
 
 Establecer stoploss por cada operación o estrategia.
 
-Configurar diferentes estrategias para diferentes temporalidades. ([Ver estrategias](./docs/estrategias.md))
+Configurar diferentes estrategias para diferentes temporalidades. ([Ver estrategias](https://gitlab.com/edumag/emma/docs/estrategias.md))
 
 Modo Real y modo SIMULA para pruebas.
 
