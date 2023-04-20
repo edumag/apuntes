@@ -22,9 +22,20 @@ git submodules init
 
 Actualizamos submodulos.
 
+Para actualizar un submodulo deberemos hacerlo desde su directorio con:
+
+```
+git fetch && git pull.
+```
+
+No confundirse con el comando:
+
 ```
 git submodules update
 ```
+
+En este caso estariamos forzando al submodulo a volver a la versión anterior
+en la que lo instalamos.
 
 ## 2. Añadimos desde cero.
 
