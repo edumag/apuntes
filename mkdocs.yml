@@ -21,39 +21,26 @@ theme:
     - header.autohide
     - content.code.copy
     - navigation.footer
+
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-        markdown_extensions:
-          - pymdownx.highlight:
-            anchor_linenums: true
-          - pymdownx.inlinehilite
-          - pymdownx.snippets
-          - pymdownx.superfences
-          - admonition
-          - pymdownx.details
-          - pymdownx.keys
-            #- toc:
-            #    toc_depth: 0
 
-        plugins:
-          - search
+  markdown_extensions:
+    - pymdownx.highlight:
+      anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - admonition
+    - pymdownx.details
+    - pymdownx.keys
 
-        copyright: danimrprofe 2022
+  plugins:
+    - search
 
-        extra:
-          social:
-            - icon: fontawesome/brands/github-alt
-              link: https://github.com/danimrprofe/
+  copyright: lesolivex.com 2022
 
-              extra_css:
-                - stylesheets/extra.css
+  extra_css:
+    - extra.css

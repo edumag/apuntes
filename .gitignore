@@ -1,3 +1,4 @@
 autodocs/
 requirements.txt
 site
+*.swp

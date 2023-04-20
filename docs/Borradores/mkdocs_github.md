@@ -77,3 +77,7 @@ To github.com:edumag/apuntes.git
    e027fa4..484035f  gh-pages -> gh-pages
    INFO     -  Your documentation should shortly be available at: https://edumag.github.io/apuntes/
 ```
+
+Referencias:
+
+- https://squidfunk.github.io/mkdocs-material/customization/
