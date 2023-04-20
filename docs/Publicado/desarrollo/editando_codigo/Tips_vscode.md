@@ -2,6 +2,7 @@
 
 ## Atajos de teclado
 
+```
 Ctrl + u:               Convertir a Mayúsculas / Minúsculas.
 Ctrl + k + c:           Comentar bloque.
 Ctrl + k + u:           Descimentar. 
@@ -13,6 +14,7 @@ Ctrl + Shift + v:       Pegado cíclico.
 Ctrl + c:               Copia linea actual.
 Ctrl + r + Ctrl + e:    Encapsula.
 Ctrl + /                Comenta bloque.
+```
 
 ## Extensión "Todo tree"
 
