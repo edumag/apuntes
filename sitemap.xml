@@ -6,31 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://lesolivex.com/apuntes/Borradores/Golpeo_de_puertos/</loc>
-         <lastmod>2023-04-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lesolivex.com/apuntes/Borradores/Tips_vscode/</loc>
-         <lastmod>2023-04-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lesolivex.com/apuntes/Borradores/dokku_app_node/</loc>
-         <lastmod>2023-04-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lesolivex.com/apuntes/Borradores/laravel-varios/</loc>
-         <lastmod>2023-04-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lesolivex.com/apuntes/Borradores/mkdocs_github/</loc>
-         <lastmod>2023-04-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/Markdown-pandoc-varios/</loc>
          <lastmod>2023-04-20</lastmod>
          <changefreq>daily</changefreq>
@@ -46,12 +21,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/documentacion/mkdocs_github/</loc>
+         <lastmod>2023-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/dokku/dokku-error/</loc>
          <lastmod>2023-04-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/dokku/dokku_app_node/</loc>
+         <lastmod>2023-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/</loc>
+         <lastmod>2023-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/editando_codigo/Tips_vscode/</loc>
          <lastmod>2023-04-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -72,6 +62,11 @@
     </url>
     <url>
          <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/</loc>
+         <lastmod>2023-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/laravel/laravel-varios/</loc>
          <lastmod>2023-04-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -127,6 +122,11 @@
     </url>
     <url>
          <loc>https://lesolivex.com/apuntes/Publicado/linux/escritorio/mutt/</loc>
+         <lastmod>2023-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lesolivex.com/apuntes/Publicado/linux/servidores/Golpeo_de_puertos/</loc>
          <lastmod>2023-04-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
