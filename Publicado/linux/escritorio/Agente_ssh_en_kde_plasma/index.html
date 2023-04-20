@@ -12,27 +12,27 @@
         <meta name="author" content="Eduardo Magrané">
       
       
-        <link rel="canonical" href="https://lesolivex.com/apuntes/Publicado/linux/Servidor-seguridad/">
+        <link rel="canonical" href="https://lesolivex.com/apuntes/Publicado/linux/escritorio/Agente_ssh_en_kde_plasma/">
       
       
-        <link rel="prev" href="../NextCloud_VPN_VPS/">
+        <link rel="prev" href="../../../desarrollo/wordpress/wp-cli_con_docker/">
       
       
-        <link rel="next" href="../Ubuntu-server-18.04-Afinando/">
+        <link rel="next" href="../Disco-duro-de-un-apple-en-linux/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Seguridad y configuración de servidor - Apuntes</title>
+        <title>Agente ssh en kde plasma - Apuntes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,11 +76,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#seguridad-y-configuracion-de-servidor" class="md-skip">
-          Saltar a contenido
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +88,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../../.." title="Apuntes" class="md-header__button md-logo" aria-label="Apuntes" data-md-component="logo">
+    <a href="../../../.." title="Apuntes" class="md-header__button md-logo" aria-label="Apuntes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -112,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Seguridad y configuración de servidor
+              Agente ssh en kde plasma
             
           </span>
         </div>
@@ -177,7 +172,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -192,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Borradores/Golpeo_de_puertos/" class="md-tabs__link">
+      <a href="../../../../Borradores/Golpeo_de_puertos/" class="md-tabs__link">
         Borradores
       </a>
     </li>
@@ -215,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../desarrollo/Markdown-pandoc-varios/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../desarrollo/Markdown-pandoc-varios/" class="md-tabs__link md-tabs__link--active">
         Publicado
       </a>
     </li>
@@ -251,7 +246,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Apuntes" class="md-nav__button md-logo" aria-label="Apuntes" data-md-component="logo">
+    <a href="../../../.." title="Apuntes" class="md-nav__button md-logo" aria-label="Apuntes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -270,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -324,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Borradores/Golpeo_de_puertos/" class="md-nav__link">
+      <a href="../../../../Borradores/Golpeo_de_puertos/" class="md-nav__link">
         Golpeo de puertos
       </a>
     </li>
@@ -338,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Borradores/Tips_vscode/" class="md-nav__link">
+      <a href="../../../../Borradores/Tips_vscode/" class="md-nav__link">
         Trucos para Visual Studio Code
       </a>
     </li>
@@ -352,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Borradores/dokku_app_node/" class="md-nav__link">
+      <a href="../../../../Borradores/dokku_app_node/" class="md-nav__link">
         Dokku con node
       </a>
     </li>
@@ -366,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Borradores/laravel-varios/" class="md-nav__link">
+      <a href="../../../../Borradores/laravel-varios/" class="md-nav__link">
         Laravel (Varios)
       </a>
     </li>
@@ -380,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Borradores/mkdocs_github/" class="md-nav__link">
+      <a href="../../../../Borradores/mkdocs_github/" class="md-nav__link">
         Mkdocs github
       </a>
     </li>
@@ -488,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/Markdown-pandoc-varios/" class="md-nav__link">
+      <a href="../../../desarrollo/Markdown-pandoc-varios/" class="md-nav__link">
         Trucos de pandoc para exportar markdown
       </a>
     </li>
@@ -502,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/VirtualHost-apache-local/" class="md-nav__link">
+      <a href="../../../desarrollo/VirtualHost-apache-local/" class="md-nav__link">
         Crear virtual host en local con apache
       </a>
     </li>
@@ -547,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
+      <a href="../../../desarrollo/Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
         Preparar entorno desarrollo con ionic4 en KDE Neon (ubuntu 18.04)
       </a>
     </li>
@@ -599,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/dokku/dokku-error/" class="md-nav__link">
+      <a href="../../../desarrollo/dokku/dokku-error/" class="md-nav__link">
         Error en deploy con dokku
       </a>
     </li>
@@ -651,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
+      <a href="../../../desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
         Instalación de drupal con ddev
       </a>
     </li>
@@ -703,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/git/git_submodulos/" class="md-nav__link">
+      <a href="../../../desarrollo/git/git_submodulos/" class="md-nav__link">
         Submodulos con git
       </a>
     </li>
@@ -755,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/joomla/joomla-local-1-minuto/" class="md-nav__link">
+      <a href="../../../desarrollo/joomla/joomla-local-1-minuto/" class="md-nav__link">
         Instalación local de joomla en 1 minuto con docker
       </a>
     </li>
@@ -809,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/laravel/Laravel-ddev/" class="md-nav__link">
+      <a href="../../../desarrollo/laravel/Laravel-ddev/" class="md-nav__link">
         Entorno de desarrollo laravel en 5m con ddev
       </a>
     </li>
@@ -823,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
+      <a href="../../../desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
         Gestión de roles y permisos para grupos desde laravel con laratrust
       </a>
     </li>
@@ -885,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/wordpress/Polylang_extras/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/Polylang_extras/" class="md-nav__link">
         Wordpress polylang extas
       </a>
     </li>
@@ -899,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/wordpress/VimWordpress/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/VimWordpress/" class="md-nav__link">
         VimWordpress
       </a>
     </li>
@@ -913,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
         Post instalación de wordpress
       </a>
     </li>
@@ -927,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/wordpress/wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/wordpress_con_dokku/" class="md-nav__link">
         Wordpress con dokku
       </a>
     </li>
@@ -941,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/wordpress/wordpress_local/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/wordpress_local/" class="md-nav__link">
         Wordpress en local con docker
       </a>
     </li>
@@ -955,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../desarrollo/wordpress/wp-cli_con_docker/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/wp-cli_con_docker/" class="md-nav__link">
         WP-CLI con Docker
       </a>
     </li>
@@ -1000,18 +995,6 @@
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1030,11 +1013,60 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Agente_ssh_en_kde_plasma/" class="md-nav__link">
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+          Escritorio
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Escritorio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Agente ssh en kde plasma
       </a>
+      
     </li>
   
 
@@ -1074,292 +1106,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NextCloud_VPN_VPS/" class="md-nav__link">
-        NextCloud VPN VPS
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Seguridad y configuración de servidor
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Seguridad y configuración de servidor
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    ssh
-  </a>
-  
-    <nav class="md-nav" aria-label="ssh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cambio-de-puerto" class="md-nav__link">
-    Cambio de puerto
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sshd_config" class="md-nav__link">
-    sshd_config
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cortafuegos" class="md-nav__link">
-    Cortafuegos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swap" class="md-nav__link">
-    Swap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#postfix-con-smtp" class="md-nav__link">
-    PostFix con SMTP.
-  </a>
-  
-    <nav class="md-nav" aria-label="PostFix con SMTP.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuracion" class="md-nav__link">
-    Configuración
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enviar-correo" class="md-nav__link">
-    Enviar correo.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    Referencias:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fail2ban" class="md-nav__link">
-    fail2ban
-  </a>
-  
-    <nav class="md-nav" aria-label="fail2ban">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#consultar-logs-de-fail2ban" class="md-nav__link">
-    Consultar logs de fail2ban
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#referencias_1" class="md-nav__link">
-    Referencias:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logcheck" class="md-nav__link">
-    Logcheck
-  </a>
-  
-    <nav class="md-nav" aria-label="Logcheck">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuracion_1" class="md-nav__link">
-    Configuración
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configurando-las-reglas" class="md-nav__link">
-    Configurando las reglas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
-    Actualizaciones de seguridad automáticas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#varios" class="md-nav__link">
-    Varios
-  </a>
-  
-    <nav class="md-nav" aria-label="Varios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
-    Ver reglas del cortafuegos:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-ips-bloqueadas" class="md-nav__link">
-    Ver IPs bloqueadas:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lynis" class="md-nav__link">
-    Lynis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chkrootkit" class="md-nav__link">
-    chkrootkit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
-    Extras
-  </a>
-  
-    <nav class="md-nav" aria-label="Extras">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scripts" class="md-nav__link">
-    Scripts
-  </a>
-  
-    <nav class="md-nav" aria-label="Scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#envio-del-informe" class="md-nav__link">
-    Envío del informe.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Ubuntu-server-18.04-Afinando/" class="md-nav__link">
-        Afinando ubuntu server 18.04
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../i3wm/" class="md-nav__link">
         I3wm
       </a>
@@ -1377,6 +1123,97 @@
       <a href="../mutt/" class="md-nav__link">
         Mutt
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+          Servidores
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Servidores
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../servidores/NextCloud_VPN_VPS/" class="md-nav__link">
+        NextCloud VPN VPS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../servidores/Servidor-seguridad/" class="md-nav__link">
+        Seguridad y configuración de servidor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../servidores/Ubuntu-server-18.04-Afinando/" class="md-nav__link">
+        Afinando ubuntu server 18.04
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1428,7 +1265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proyectos/emma/" class="md-nav__link">
+      <a href="../../../proyectos/emma/" class="md-nav__link">
         EMMA
       </a>
     </li>
@@ -1466,226 +1303,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    ssh
-  </a>
-  
-    <nav class="md-nav" aria-label="ssh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cambio-de-puerto" class="md-nav__link">
-    Cambio de puerto
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sshd_config" class="md-nav__link">
-    sshd_config
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cortafuegos" class="md-nav__link">
-    Cortafuegos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swap" class="md-nav__link">
-    Swap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#postfix-con-smtp" class="md-nav__link">
-    PostFix con SMTP.
-  </a>
-  
-    <nav class="md-nav" aria-label="PostFix con SMTP.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuracion" class="md-nav__link">
-    Configuración
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enviar-correo" class="md-nav__link">
-    Enviar correo.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    Referencias:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fail2ban" class="md-nav__link">
-    fail2ban
-  </a>
-  
-    <nav class="md-nav" aria-label="fail2ban">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#consultar-logs-de-fail2ban" class="md-nav__link">
-    Consultar logs de fail2ban
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#referencias_1" class="md-nav__link">
-    Referencias:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logcheck" class="md-nav__link">
-    Logcheck
-  </a>
-  
-    <nav class="md-nav" aria-label="Logcheck">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuracion_1" class="md-nav__link">
-    Configuración
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configurando-las-reglas" class="md-nav__link">
-    Configurando las reglas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
-    Actualizaciones de seguridad automáticas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#varios" class="md-nav__link">
-    Varios
-  </a>
-  
-    <nav class="md-nav" aria-label="Varios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
-    Ver reglas del cortafuegos:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-ips-bloqueadas" class="md-nav__link">
-    Ver IPs bloqueadas:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lynis" class="md-nav__link">
-    Lynis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chkrootkit" class="md-nav__link">
-    chkrootkit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
-    Extras
-  </a>
-  
-    <nav class="md-nav" aria-label="Extras">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scripts" class="md-nav__link">
-    Scripts
-  </a>
-  
-    <nav class="md-nav" aria-label="Scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#envio-del-informe" class="md-nav__link">
-    Envío del informe.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1700,203 +1317,22 @@
                   
 
 
-<h1 id="seguridad-y-configuracion-de-servidor">Seguridad y configuración de servidor</h1>
-<p>En estos días extraños de confinamiento parece que se ha multiplicado los
-ataques en internet, en mi caso consiguieron entrar en mi vps y dejarlo
-completamente inútil.</p>
-<p>Aquí quedan los pasos que he recopilado para mantener el servidor con un mínimo
-de seguridad.</p>
-<h2 id="ssh">ssh</h2>
-<h3 id="cambio-de-puerto">Cambio de puerto</h3>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<pre><code>- # Port 22
-+ Port 3333 # El que tu quieras en verdad.
-</code></pre>
-<p>Reiniciamos servicio:</p>
-<p><code>sudo /etc/init.d/ssh restart</code></p>
-<p>Ahora para entrar de nuevo deberemos especificar el puerto.</p>
-<p><code>ssh -p port user@server</code></p>
-<p>Incluso añadirlo en el ~/.ssh/config para no tener que especificarlo todo el
-rato.</p>
-<pre><code>Host server
-    IdentityFile ~/.ssh/id_rsa                                          
-    User ubuntu                                                         
-    Hostname server.com                                            
-    Port 1111
-</code></pre>
-<h3 id="sshd_config">sshd_config</h3>
-<p>Configuración más que recomendada:</p>
-<p>Si activamos estas reglas tener en cuenta que tenéis que tener configurado
-previamente la llave ssh en tu ordenador y añadida al servidor.</p>
-<pre><code>PermitRootLogin no        # No se permite acceso a root desde ssh.
-AllowUsers USER1 USER2    # Lista de usuarios que si pueden entrar.
-PasswordAuthentication no # Solo permitimos entrar con clave ssh.
-</code></pre>
-<h2 id="cortafuegos">Cortafuegos</h2>
-<pre><code>sudo ufw allow http
-sudo ufw allow https
-sudo ufw allow [SSH PORT]
-sudo ufw disable &amp;&amp; sudo ufw enable
-</code></pre>
-<h2 id="swap">Swap</h2>
-<p>Tener swap es fundamental para evitar fallos por falta de memoria.</p>
-<p>Con esta formula creamos un fichero que nos servirá como swap en caso de que
-nuestro servidor no la tenga habilitada.</p>
-<pre><code>fallocate -l 3G /swapfile
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-</code></pre>
-<p>sudo vim /etc/fstab</p>
-<pre><code>/swapfile swap swap defaults 0 0
-</code></pre>
-<h2 id="postfix-con-smtp">PostFix con SMTP.</h2>
-<p>Si teneis un servidor de correo contratado podeis configurar postfix para
-que envie los correos desde él.</p>
-<p>Si quereis utilizar un gmail tendreis que buscar como hacerlo.</p>
-<p>Configuramos servidor de correo para poder recibir correos de aviso.</p>
-<p><code>sudo apt.get install postfix</code></p>
-<p>Seleccionamos "Internet site"</p>
-<p>y ponemos el nombre del servidor smtp.</p>
-<h3 id="configuracion">Configuración</h3>
-<p><code>sudo vim /etc/postfix/main.cf</code></p>
-<p>modificamos:</p>
-<pre><code>myhostname = example.com
-relayhost = [mail.isp.example]:587
-# enable SASL authentication
-smtp_sasl_auth_enable = yes
-# disallow methods that allow anonymous authentication.
-smtp_sasl_security_options = noanonymous
-# where to find sasl_passwd
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-# Enable STARTTLS encryption
-smtp_use_tls = yes
-# where to find CA certificates
-smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
-</code></pre>
-<p>Credenciales:</p>
-<p>Añadimos nuestras credenciales de nuestro servidor smtp.</p>
-<p><code>sudo vim /etc/postfix/sasl_passwd</code></p>
-<pre><code>[mail.isp.example]:587 username:password
-</code></pre>
-<pre><code>sudo postmap /etc/postfix/sasl_passwd
-sudo chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
-sudo chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
-sudo rm /etc/postfix/sasl_passwd
-</code></pre>
-<p>Reiniciamos postfix:</p>
-<p><code>sudo service postfix restart</code></p>
-<h3 id="enviar-correo">Enviar correo.</h3>
-<pre><code>sudo apt-get install mpack
-echo "Test" &gt; /tmp/test.txt
-mpack -s 'test' /tmp/test.txt tu@email.com
-</code></pre>
-<h3 id="referencias">Referencias:</h3>
-<ul>
-<li>https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-on-ubuntu-18-04-es</li>
-</ul>
-<h2 id="fail2ban">fail2ban</h2>
-<p><code>sudo apt-get install fail2ban</code></p>
-<p>Copiamos configuración por defecto a fichero personalizado.</p>
-<p><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code></p>
-<p>Editar configuración:</p>
-<p><code>sudo vim /etc/fail2ban/jail.local</code></p>
-<p>Podemos añadir una lista de IPs para que sean ignoradas:</p>
-<pre><code>ignoreip = 127.0.0.1/8 ::1
-</code></pre>
-<p>Añadimos reglas para los wordpress:</p>
-<pre><code>[ssh]
-enabled  = true
-port     = ssh
-filter   = sshd
-logpath  = /var/log/auth.log
-maxretry = 3
-bantime  = 1h
+  <h1>Agente ssh en kde plasma</h1>
 
-[wordpress]
-enabled  = true
-filter   = wordpress
-logpath  = /var/log/nginx/*.log
-port     = 80,443
-bantime  = 1h
+<p>Afegim script d'inici: ~/.config/autostart-scripts/ssh-unlock.sh</p>
+<pre><code class="language-bash">#!/bin/sh
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+/usr/bin/ssh-add $HOME/.ssh/id_rsa &lt;/dev/null
 </code></pre>
-<p>Creamos fichero /etc/fail2ban/filter.d/wordpress.conf y añadimos:</p>
-<pre><code># Fail2Ban filter for WordPress
-[Definition]
-failregex =  - - \[(\d{2})/\w{3}/\d{4}:\1:\1:\1 -\d{4}\] "POST /wp-login.php HTTP/1.1" 200
-ignoreregex =
+<p>Executem l'script per primera vegada:</p>
+<pre><code class="language-bash">sh ~/.config/autostart-scripts/ssh-unlock.sh
 </code></pre>
-<p>Reiniciamos:</p>
-<p><code>sudo systemctl restart fail2ban</code></p>
-<p>Ver estado:</p>
-<pre><code>$ sudo fail2ban-client status
-
-Status
-|- Number of jail:  3
-`- Jail list:   ssh, sshd, wordpress
-
-$ sudo fail2ban-client status ssh
-Status for the jail: ssh
-|- Filter
-|  |- Currently failed: 3
-|  |- Total failed: 11
-|  `- File list:    /var/log/auth.log
-`- Actions
-   |- Currently banned: 5
-   |- Total banned: 6
-   `- Banned IP list:   104.248.176.46 106.12.125.140 163.172.166.223 37.187.181.182 51.68.89.100
-</code></pre>
-<h3 id="consultar-logs-de-fail2ban">Consultar logs de fail2ban</h3>
-<p>Número de veces que han sido bloqueada las IPs:</p>
-<p><code>zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c</code></p>
-<h3 id="referencias_1">Referencias:</h3>
-<ul>
-<li>https://raiolanetworks.es/blog/bloquear-ataques-dos-con-fail2ban-en-linux/</li>
-<li>https://geekland.eu/como-consultar-logs-de-fail2ban/</li>
-</ul>
-<h2 id="logcheck">Logcheck</h2>
-<p><code>sudo apt-get install logcheck</code></p>
-<h3 id="configuracion_1">Configuración</h3>
-<p><code>sudo vim /etc/logcheck/logcheck.conf</code></p>
-<p>Modificamos:</p>
-<pre><code>SENDMAILTO=&quot;edu@lesolivex.com&quot;
-MAILASATTACH=1
-</code></pre>
-<h3 id="configurando-las-reglas">Configurando las reglas</h3>
-<p><code>sudo vim /etc/logcheck/ignore.d.server/edumag</code></p>
-<p>Utilizamos expresiones regulares para indicar las lineas que no queremos mostrar.</p>
-<pre><code>*.from\ 251.red-79-157-159.dynamicip.rima-tde.net*
-</code></pre>
-<p>Probamos la salida:</p>
-<p><code>sudo -u logcheck logcheck -o -t</code></p>
-<p>Referencias:</p>
-<p>• http://somebooks.es/recibir-informes-sobre-sucesos-de-ubuntu-server-18-04-lts-con-logcheck/</p>
-<h2 id="actualizaciones-de-seguridad-automaticas">Actualizaciones de seguridad automáticas</h2>
-<p><code>sudo dpkg-reconfigure --priority=low unattended-upgrades</code></p>
-<p>Referencias:</p>
-<p>• https://help.ubuntu.com/community/AutomaticSecurityUpdates</p>
-<h2 id="varios">Varios</h2>
-<h3 id="ver-reglas-del-cortafuegos">Ver reglas del cortafuegos:</h3>
-<p><code>sudo iptables -L -n --line-numbers</code></p>
-<h3 id="ver-ips-bloqueadas">Ver IPs bloqueadas:</h3>
-<p><code>sudo iptables -L -n --line-numbers | grep REJECT</code></p>
-<h3 id="lynis">Lynis</h3>
-<p>Lynis nos genera un informe muy completo sobre el estado de nuestro servidor y
-nos da sugerencias.</p>
-<p><code>sudo apt-get install lynis</code></p>
-<p><code>sodo lynis audit system</code></p>
-<h3 id="chkrootkit">chkrootkit</h3>
-<p>Permite localizar rootkits.</p>
-<p><code>sudo apt-get install rootkits</code></p>
-<p><code>sudo chkrootkit</code></p>
-<h2 id="extras">Extras</h2>
-<h3 id="scripts">Scripts</h3>
-<p>He realizado unos pequeños scripts para tener una visión del estado
-del servidor de forma rapida.</p>
-<p><a href="https://github.com/edumag/magscripts/tree/master/servidor/ReportServer">https://github.com/edumag/magscripts/tree/master/servidor/ReportServer</a> https://github.com/edumag/magscripts/tree/master/servidor/ReportServer</p>
-<p>Los scripts están separados por temas así que es facil eliminar los que no te interesan o añadir otros.</p>
-<h4 id="envio-del-informe">Envío del informe.</h4>
-<p><code>sudo ./reportServer.sh &gt; /tmp/report.txt &amp;&amp; mpack -s repor /tmp/report.txt  edu@lesolivex.com</code></p>
+<p>Ens demanarà el password de la clau i podem especificar que no volem que
+ens torni a preguntar.</p>
+<p>D'aquesta manera ja podem treballar sense que ens pregunti cada vegada que la
+utilitzem.</p>
+<p>En caso de querer cambiar la contraseña podemos gestionarla desde:</p>
+<p><code>kwalletmanager5</code></p>
 
 
 
@@ -1923,7 +1359,7 @@ del servidor de forma rapida.</p>
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../NextCloud_VPN_VPS/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: NextCloud VPN VPS" rel="prev">
+          <a href="../../../desarrollo/wordpress/wp-cli_con_docker/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: WP-CLI con Docker" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1932,20 +1368,20 @@ del servidor de forma rapida.</p>
                 Anterior
               </span>
               <div class="md-ellipsis">
-                NextCloud VPN VPS
+                WP-CLI con Docker
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Ubuntu-server-18.04-Afinando/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Afinando ubuntu server 18.04" rel="next">
+          <a href="../Disco-duro-de-un-apple-en-linux/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Disco duro de un apple en linux" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Afinando ubuntu server 18.04
+                Disco duro de un apple en linux
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1977,10 +1413,10 @@ del servidor de forma rapida.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.indexes", "header.autohide", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.indexes", "header.autohide", "content.code.copy", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
