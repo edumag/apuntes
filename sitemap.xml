@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lesolivex.com/apuntes/Borradores/mkdocs_github/</loc>
+         <lastmod>2023-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lesolivex.com/apuntes/Publicado/desarrollo/Markdown-pandoc-varios/</loc>
          <lastmod>2023-04-20</lastmod>
          <changefreq>daily</changefreq>
