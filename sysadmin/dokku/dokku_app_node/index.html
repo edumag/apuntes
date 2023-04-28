@@ -12,25 +12,25 @@
         <meta name="author" content="Eduardo Magrané">
       
       
-        <link rel="canonical" href="https://lesolivex.com/apuntes/">
+        <link rel="canonical" href="https://lesolivex.com/apuntes/sysadmin/dokku/dokku_app_node/">
       
       
+        <link rel="prev" href="../dokku-error/">
       
-        <link rel="next" href="desarrollo/Markdown-pandoc-varios/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
     
     
       
-        <title>Apuntes</title>
+        <title>Dokku con node - Apuntes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contacto" class="md-skip">
+        <a href="#dokku-con-node" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="." title="Apuntes" class="md-header__button md-logo" aria-label="Apuntes" data-md-component="logo">
+    <a href="../../.." title="Apuntes" class="md-header__button md-logo" aria-label="Apuntes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Dokku con node
             
           </span>
         </div>
@@ -176,12 +176,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -196,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="desarrollo/Markdown-pandoc-varios/" class="md-tabs__link">
+      <a href="../../../desarrollo/Markdown-pandoc-varios/" class="md-tabs__link">
         Desarrollo
       </a>
     </li>
@@ -217,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-tabs__link">
+      <a href="../../../linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -235,7 +233,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="proyectos/emma/" class="md-tabs__link">
+      <a href="../../../proyectos/emma/" class="md-tabs__link">
         Proyectos
       </a>
     </li>
@@ -245,13 +243,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="sysadmin/Golpeo_de_puertos/" class="md-tabs__link">
+      <a href="../../Golpeo_de_puertos/" class="md-tabs__link md-tabs__link--active">
         Sysadmin
       </a>
     </li>
@@ -285,7 +285,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Apuntes" class="md-nav__button md-logo" aria-label="Apuntes" data-md-component="logo">
+    <a href="../../.." title="Apuntes" class="md-nav__button md-logo" aria-label="Apuntes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -302,48 +302,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#contacto" class="md-nav__link">
-    Contacto
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -405,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/Markdown-pandoc-varios/" class="md-nav__link">
+      <a href="../../../desarrollo/Markdown-pandoc-varios/" class="md-nav__link">
         Trucos de pandoc para exportar markdown
       </a>
     </li>
@@ -419,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/VirtualHost-apache-local/" class="md-nav__link">
+      <a href="../../../desarrollo/VirtualHost-apache-local/" class="md-nav__link">
         Crear virtual host en local con apache
       </a>
     </li>
@@ -466,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
+      <a href="../../../desarrollo/Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
         Preparar entorno desarrollo con ionic4 en KDE Neon (ubuntu 18.04)
       </a>
     </li>
@@ -520,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/documentacion/mkdocs_github/" class="md-nav__link">
+      <a href="../../../desarrollo/documentacion/mkdocs_github/" class="md-nav__link">
         Mkdocs github
       </a>
     </li>
@@ -574,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
+      <a href="../../../desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
         Instalación de drupal con ddev
       </a>
     </li>
@@ -628,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/editando_codigo/Tips_vscode/" class="md-nav__link">
+      <a href="../../../desarrollo/editando_codigo/Tips_vscode/" class="md-nav__link">
         Trucos para Visual Studio Code
       </a>
     </li>
@@ -682,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/git/git_submodulos/" class="md-nav__link">
+      <a href="../../../desarrollo/git/git_submodulos/" class="md-nav__link">
         Submodulos con git
       </a>
     </li>
@@ -736,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/joomla/joomla-local-1-minuto/" class="md-nav__link">
+      <a href="../../../desarrollo/joomla/joomla-local-1-minuto/" class="md-nav__link">
         Instalación local de joomla en 1 minuto con docker
       </a>
     </li>
@@ -794,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/laravel/Laravel-ddev/" class="md-nav__link">
+      <a href="../../../desarrollo/laravel/Laravel-ddev/" class="md-nav__link">
         Entorno de desarrollo laravel en 5m con ddev
       </a>
     </li>
@@ -808,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
+      <a href="../../../desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
         Gestión de roles y permisos para grupos desde laravel con laratrust
       </a>
     </li>
@@ -822,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/laravel/laravel-varios/" class="md-nav__link">
+      <a href="../../../desarrollo/laravel/laravel-varios/" class="md-nav__link">
         Laravel (Varios)
       </a>
     </li>
@@ -886,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/wordpress/Polylang_extras/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/Polylang_extras/" class="md-nav__link">
         Wordpress polylang extas
       </a>
     </li>
@@ -900,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/wordpress/VimWordpress/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/VimWordpress/" class="md-nav__link">
         VimWordpress
       </a>
     </li>
@@ -914,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
         Post instalación de wordpress
       </a>
     </li>
@@ -928,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/wordpress/wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/wordpress_con_dokku/" class="md-nav__link">
         Wordpress con dokku
       </a>
     </li>
@@ -942,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/wordpress/wordpress_local/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/wordpress_local/" class="md-nav__link">
         Wordpress en local con docker
       </a>
     </li>
@@ -956,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/wordpress/wp-cli_con_docker/" class="md-nav__link">
+      <a href="../../../desarrollo/wordpress/wp-cli_con_docker/" class="md-nav__link">
         WP-CLI con Docker
       </a>
     </li>
@@ -1057,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-nav__link">
+      <a href="../../../linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-nav__link">
         Agente ssh en kde plasma
       </a>
     </li>
@@ -1071,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux/escritorio/Disco-duro-de-un-apple-en-linux/" class="md-nav__link">
+      <a href="../../../linux/escritorio/Disco-duro-de-un-apple-en-linux/" class="md-nav__link">
         Disco duro de un apple en linux
       </a>
     </li>
@@ -1085,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux/escritorio/Neon_post_instalacion/" class="md-nav__link">
+      <a href="../../../linux/escritorio/Neon_post_instalacion/" class="md-nav__link">
         Post instalación KDE Neon 5.17
       </a>
     </li>
@@ -1099,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux/escritorio/i3wm/" class="md-nav__link">
+      <a href="../../../linux/escritorio/i3wm/" class="md-nav__link">
         I3wm
       </a>
     </li>
@@ -1113,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux/escritorio/mutt/" class="md-nav__link">
+      <a href="../../../linux/escritorio/mutt/" class="md-nav__link">
         Mutt
       </a>
     </li>
@@ -1173,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="proyectos/emma/" class="md-nav__link">
+      <a href="../../../proyectos/emma/" class="md-nav__link">
         EMMA
       </a>
     </li>
@@ -1193,14 +1156,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -1221,7 +1186,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Sysadmin
@@ -1234,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sysadmin/Golpeo_de_puertos/" class="md-nav__link">
+      <a href="../../Golpeo_de_puertos/" class="md-nav__link">
         Golpeo de puertos
       </a>
     </li>
@@ -1248,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sysadmin/NextCloud_VPN_VPS/" class="md-nav__link">
+      <a href="../../NextCloud_VPN_VPS/" class="md-nav__link">
         NextCloud VPN VPS
       </a>
     </li>
@@ -1262,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sysadmin/Servidor-seguridad/" class="md-nav__link">
+      <a href="../../Servidor-seguridad/" class="md-nav__link">
         Seguridad y configuración de servidor
       </a>
     </li>
@@ -1276,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sysadmin/Ubuntu-server-18.04-Afinando/" class="md-nav__link">
+      <a href="../../Ubuntu-server-18.04-Afinando/" class="md-nav__link">
         Afinando ubuntu server 18.04
       </a>
     </li>
@@ -1288,16 +1253,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
       
       
         
@@ -1312,7 +1279,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_5">
           <span class="md-nav__icon md-icon"></span>
           Dokku
@@ -1325,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sysadmin/dokku/dokku-error/" class="md-nav__link">
+      <a href="../dokku-error/" class="md-nav__link">
         Error en deploy con dokku
       </a>
     </li>
@@ -1337,11 +1304,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="sysadmin/dokku/dokku_app_node/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dokku con node
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Dokku con node
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creamos-app" class="md-nav__link">
+    Creamos app.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadimos-buildpack-nodejs" class="md-nav__link">
+    Añadimos buildpack nodejs.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#letsencrypt" class="md-nav__link">
+    letsencrypt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1377,6 +1399,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1385,8 +1409,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contacto" class="md-nav__link">
-    Contacto
+  <a href="#creamos-app" class="md-nav__link">
+    Creamos app.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadimos-buildpack-nodejs" class="md-nav__link">
+    Añadimos buildpack nodejs.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#letsencrypt" class="md-nav__link">
+    letsencrypt
   </a>
   
 </li>
@@ -1406,12 +1444,26 @@
                   
 
 
-  <h1>Home</h1>
-
-<p>Apuntes sobre lenguajes de programación, herramientas y linux.</p>
-<h2 id="contacto">Contacto</h2>
-<p>Eduardo Magrané</p>
-<p>edu@lesolivex.com</p>
+<h1 id="dokku-con-node">Dokku con node</h1>
+<p>Configurar la app en puerto 5000.</p>
+<h2 id="creamos-app">Creamos app.</h2>
+<pre><code>dokku apps:create mementomori
+dokku buildpacks:add mementomori https://github.com/heroku/heroku-buildpack-nodejs.git
+dokku domains:add mementomori.lesolivex.com
+dokku domains:add mementomori mementomori.lesolivex.com
+dokku builder-dockerfile:report
+dokku builder-dockerfile:report node-js-app
+</code></pre>
+<h2 id="anadimos-buildpack-nodejs">Añadimos buildpack nodejs.</h2>
+<pre><code>dokku config:show mementomori
+dokku buildpacks:clear mementomori
+dokku buildpacks:set mementomori heroku/nodejs
+</code></pre>
+<h2 id="letsencrypt">letsencrypt</h2>
+<pre><code>dokku config:set --no-restart mementomori DOKKU_LETSENCRYPT_EMAIL=edu@lesolivex.com
+dokku letsencrypt mementomori
+dokku letsencrypt:auto-renew
+</code></pre>
 
 
 
@@ -1437,21 +1489,21 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
-        
           
-          <a href="desarrollo/Markdown-pandoc-varios/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Trucos de pandoc para exportar markdown" rel="next">
+          <a href="../dokku-error/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Error en deploy con dokku" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Siguiente
+                Anterior
               </span>
               <div class="md-ellipsis">
-                Trucos de pandoc para exportar markdown
+                Error en deploy con dokku
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
@@ -1477,10 +1529,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.indexes", "header.autohide", "content.code.copy", "navigation.footer"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.indexes", "header.autohide", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
