@@ -1,3 +1,11 @@
+
+El golpeo de puertos (del inglés port knocking) es un mecanismo para abrir
+puertos externamente en un firewall mediante una secuencia preestablecida de
+intentos de conexión a puertos que se encuentran cerrados. Una vez que el
+firewall recibe una secuencia de conexión correcta, sus reglas son modificadas
+para permitir al host que realizó los intentos conectarse a un puerto
+específico.
+
 ## Servidor
 
 ### Instalar en servidor
@@ -53,3 +61,6 @@ Ejemplo que viene por defecto.
 `knock localhost 9000 8000 7000`
 
 
+## Referencias
+
+- https://es.wikipedia.org/wiki/Golpeo_de_puertos
