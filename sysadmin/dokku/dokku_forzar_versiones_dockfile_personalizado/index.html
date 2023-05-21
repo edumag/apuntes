@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#en-local" class="md-skip">
+        <a href="#en-servidor" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1352,6 +1352,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#en-servidor" class="md-nav__link">
+    En servidor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#en-local" class="md-nav__link">
     En local
   </a>
@@ -1405,6 +1412,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#en-servidor" class="md-nav__link">
+    En servidor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#en-local" class="md-nav__link">
     En local
   </a>
@@ -1428,7 +1442,8 @@
 
   <h1>Dokku forzar versiones dockfile personalizado</h1>
 
-<p>En servidor</p>
+<p>Truco para poder instalar un proyecto olvidado de hace 10 años.</p>
+<h2 id="en-servidor">En servidor</h2>
 <pre><code class="language-bash">export DATABASE_IMAGE_VERSION=&quot;5.7.28&quot;
 dokku mysql:create $app-db
 dokku apps:create $app
@@ -1437,7 +1452,7 @@ dokku config:set --no-restart $app DOKKU_LETSENCRYPT_EMAIL=$email
 dokku letsencrypt $app
 ## Necesario para conectar dockerfile con mysql.
 dokku docker-options:add $app build '--build-arg DATABASE_URL=`dokku config:get $app DATABASE_URL`'
-# ENlazar puertos.
+# Enlazar puertos.
 dokku proxy:ports-set $app https:443:80
 </code></pre>
 <p>Forzamos instalación en dokku con version 5 de mysql:</p>
