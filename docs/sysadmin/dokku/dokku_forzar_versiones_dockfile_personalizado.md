@@ -1,4 +1,6 @@
-En servidor
+Truco para poder instalar un proyecto olvidado de hace 10 años.
+
+## En servidor
 
 ```bash
 export DATABASE_IMAGE_VERSION="5.7.28"
@@ -9,7 +11,7 @@ dokku config:set --no-restart $app DOKKU_LETSENCRYPT_EMAIL=$email
 dokku letsencrypt $app
 ## Necesario para conectar dockerfile con mysql.
 dokku docker-options:add $app build '--build-arg DATABASE_URL=`dokku config:get $app DATABASE_URL`'
-# ENlazar puertos.
+# Enlazar puertos.
 dokku proxy:ports-set $app https:443:80
 ```
 
