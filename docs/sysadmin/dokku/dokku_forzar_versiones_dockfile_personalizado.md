@@ -5,7 +5,7 @@ export DATABASE_IMAGE_VERSION="5.7.28"
 dokku mysql:create $app-db
 dokku apps:create $app
 dokku mysql:link $app-db $app
-dokku config:set --no-restart $app DOKKU_LETSENCRYPT_EMAIL=edu@lesolivex.com
+dokku config:set --no-restart $app DOKKU_LETSENCRYPT_EMAIL=$email
 dokku letsencrypt $app
 ## Necesario para conectar dockerfile con mysql.
 dokku docker-options:add $app build '--build-arg DATABASE_URL=`dokku config:get $app DATABASE_URL`'
@@ -39,10 +39,44 @@ dokku config:show APP:
 DATABASE_URL:             mysql://mysql:aaf38bcf30f9f7b4@dokku-mysql-$app-db:3306/$app_db
 DOKKU_APP_RESTORE:        1
 DOKKU_APP_TYPE:           herokuish
-DOKKU_LETSENCRYPT_EMAIL:  edu@lesolivex.com
+DOKKU_LETSENCRYPT_EMAIL:  $email
 DOKKU_PROXY_PORT:         80
 DOKKU_PROXY_PORT_MAP:     http:80:5000 https:443:5000
 DOKKU_PROXY_SSL_PORT:     443
 GIT_REV:                  9d372d044671a592c85da947565f2213c411b884
+```
+
+## En local
+
+Dockerfile
+
+```
+FROM php:5.6-apache
+
+RUN a2enmod rewrite
+RUN a2enmod ssl
+
+RUN docker-php-ext-install mysql 
+RUN docker-php-ext-enable mysql
+
+
+COPY ./ /var/www/html/
+
+EXPOSE 443
+```
+
+composer.json
+
+```
+{
+  "require": {
+    "php": "5.6"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "chmod -R 777 wp-content"
+    ]
+  }
+}
 ```
 

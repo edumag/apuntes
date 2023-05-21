@@ -1,14 +1,3 @@
-"=========== Meta ============
-"StrID : 1277
-"Title : I3wm Escritorio ligero
-"Slug  : i3wm-escritorio-ligero
-"Cats  : Linux
-"Tags  : 
-"=============================
-"EditType   : post
-"EditFormat : MD
-"BlogAddr   : https://lesolivex.com
-"========== Content ==========
 # Personalización i3wm
 
 ## Instalación
