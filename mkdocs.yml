@@ -7,6 +7,8 @@ site_description: >-
 site_url: https://lesolivex.com/apuntes
 docs_dir: docs/
 
+extra_css: [extra.css]
+
 theme:
   name: material
   language: es
@@ -42,6 +44,3 @@ theme:
     - search
 
   copyright: lesolivex.com 2022
-
-  extra_css:
-    - extra.css
