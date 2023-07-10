@@ -10,6 +10,7 @@ docs_dir: docs/
 theme:
   name: material
   language: es
+  logo: assets/logo.png
 
   features:
     - navigation.top
