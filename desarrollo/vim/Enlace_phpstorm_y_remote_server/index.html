@@ -981,6 +981,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file2vim" class="md-nav__link">
+    file2vim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configi3config" class="md-nav__link">
+    ~/.config/i3/config
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1681,6 +1695,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file2vim" class="md-nav__link">
+    file2vim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configi3config" class="md-nav__link">
+    ~/.config/i3/config
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1740,6 +1768,14 @@ text/plain=vim.desktop
 text/markdown=vim.desktop
 text/html=vim.desktop
 x-scheme-handler/phpstorm=vim.desktop
+</code></pre>
+<h2 id="file2vim">file2vim</h2>
+<pre><code class="language-bash">#!/bin/bash
+vim-remote `xclip -o`
+</code></pre>
+<h2 id="configi3config">~/.config/i3/config</h2>
+<pre><code class="language-bash"># Ruta de fichero copiada a vim-remote.
+bindsym Ctrl+Shift+q exec file2vim
 </code></pre>
 
 
