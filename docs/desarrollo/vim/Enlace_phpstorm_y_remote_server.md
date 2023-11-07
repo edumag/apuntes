@@ -49,3 +49,18 @@ text/markdown=vim.desktop
 text/html=vim.desktop
 x-scheme-handler/phpstorm=vim.desktop
 ```
+
+## file2vim
+
+```bash
+#!/bin/bash
+vim-remote `xclip -o`
+```
+
+## ~/.config/i3/config
+
+```bash
+# Ruta de fichero copiada a vim-remote.
+bindsym Ctrl+Shift+q exec file2vim
+```
+
