@@ -996,9 +996,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#autocompletar" class="md-nav__link">
-    Autocompletar
+  <a href="#autocompletado" class="md-nav__link">
+    Autocompletado
   </a>
+  
+    <nav class="md-nav" aria-label="Autocompletado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basico" class="md-nav__link">
+    Básico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omni" class="md-nav__link">
+    omni
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1661,9 +1681,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#autocompletar" class="md-nav__link">
-    Autocompletar
+  <a href="#autocompletado" class="md-nav__link">
+    Autocompletado
   </a>
+  
+    <nav class="md-nav" aria-label="Autocompletado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basico" class="md-nav__link">
+    Básico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omni" class="md-nav__link">
+    omni
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1690,11 +1730,21 @@
 <li>Ctrl+o - Jump back from the definition.</li>
 <li>Ctrl+W Ctrl+] - Open the definition in a horizontal split</li>
 </ul>
-<h2 id="autocompletar">Autocompletar</h2>
-<p>Ctrl+x Ctrl+f Rura de archivo
-Ctrl+x y Ctrl+p Palabras
-Ctrl+x y Ctrl+l Lineas
-Ctrl+x y Ctrl+k Diccionario</p>
+<h2 id="autocompletado">Autocompletado</h2>
+<h3 id="basico">Básico</h3>
+<p>Ctrl+p / Ctrl+n    : Palabra que se encuentren en los buffers.</p>
+<h3 id="omni">omni</h3>
+<p>Activamos en .vimrc com:</p>
+<p>set omnifunc=syntaxcomplete#Complete</p>
+<p><Ctrl + ]>: Tags file completion
+<Ctrl + d>: Definition completion
+<Ctrl + f>: Filename completion (based on files in $PWD)
+<Ctrl + i>: Path pattern completion
+<Ctrl + k>: Dictionary completion
+<Ctrl + l>: Whole line completion
+<Ctrl + n>: Keyword local completion
+<Ctrl + o>: Omni completion completion
+<Ctrl + v>: Command line completion</p>
 
 
 
