@@ -12,27 +12,27 @@
         <meta name="author" content="Eduardo Magrané">
       
       
-        <link rel="canonical" href="https://lesolivex.com/apuntes/desarrollo/laravel/Laravel-ddev/">
+        <link rel="canonical" href="https://lesolivex.com/apuntes/sysadmin/odoo/">
       
       
-        <link rel="prev" href="../../joomla/joomla-local-1-minuto/">
+        <link rel="prev" href="../Ubuntu-server-18.04-Afinando/">
       
       
-        <link rel="next" href="../laravel-roles-permisos-grupos-laratrust/">
+        <link rel="next" href="../docker/limpieza/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
     
     
       
-        <title>Entorno de desarrollo laravel en 5m con ddev - Apuntes</title>
+        <title>Odoo - Apuntes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#entorno-de-desarrollo-laravel-en-5m-con-ddev" class="md-skip">
+        <a href="#odoo" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -95,9 +95,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../../.." title="Apuntes" class="md-header__button md-logo" aria-label="Apuntes" data-md-component="logo">
+    <a href="../.." title="Apuntes" class="md-header__button md-logo" aria-label="Apuntes" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Entorno de desarrollo laravel en 5m con ddev
+              Odoo
             
           </span>
         </div>
@@ -182,7 +182,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -191,15 +191,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Markdown-pandoc-varios/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../desarrollo/Markdown-pandoc-varios/" class="md-tabs__link">
         Desarrollo
       </a>
     </li>
@@ -220,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-tabs__link">
+      <a href="../../linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -238,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../proyectos/emma/" class="md-tabs__link">
+      <a href="../../proyectos/emma/" class="md-tabs__link">
         Proyectos
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../sysadmin/Golpeo_de_puertos/" class="md-tabs__link">
+      <a href="../Golpeo_de_puertos/" class="md-tabs__link md-tabs__link--active">
         Sysadmin
       </a>
     </li>
@@ -288,9 +288,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Apuntes" class="md-nav__button md-logo" aria-label="Apuntes" data-md-component="logo">
+    <a href="../.." title="Apuntes" class="md-nav__button md-logo" aria-label="Apuntes" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Apuntes
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -319,16 +319,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -363,7 +361,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Desarrollo
@@ -376,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Markdown-pandoc-varios/" class="md-nav__link">
+      <a href="../../desarrollo/Markdown-pandoc-varios/" class="md-nav__link">
         Trucos de pandoc para exportar markdown
       </a>
     </li>
@@ -390,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../VirtualHost-apache-local/" class="md-nav__link">
+      <a href="../../desarrollo/VirtualHost-apache-local/" class="md-nav__link">
         Crear virtual host en local con apache
       </a>
     </li>
@@ -404,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clean/" class="md-nav__link">
+      <a href="../../desarrollo/clean/" class="md-nav__link">
         Clean
       </a>
     </li>
@@ -451,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
+      <a href="../../desarrollo/Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
         Preparar entorno desarrollo con ionic4 en KDE Neon (ubuntu 18.04)
       </a>
     </li>
@@ -505,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentacion/mkdocs_github/" class="md-nav__link">
+      <a href="../../desarrollo/documentacion/mkdocs_github/" class="md-nav__link">
         Mkdocs github
       </a>
     </li>
@@ -559,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
+      <a href="../../desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
         Instalación de drupal con ddev
       </a>
     </li>
@@ -613,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../editando_codigo/Tips_vscode/" class="md-nav__link">
+      <a href="../../desarrollo/editando_codigo/Tips_vscode/" class="md-nav__link">
         Trucos para Visual Studio Code
       </a>
     </li>
@@ -669,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git/Eliminar_%C3%BAltimos_commits/" class="md-nav__link">
+      <a href="../../desarrollo/git/Eliminar_%C3%BAltimos_commits/" class="md-nav__link">
         Eliminar últimos commits
       </a>
     </li>
@@ -683,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git/git_submodulos/" class="md-nav__link">
+      <a href="../../desarrollo/git/git_submodulos/" class="md-nav__link">
         Submodulos con git
       </a>
     </li>
@@ -737,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../joomla/joomla-local-1-minuto/" class="md-nav__link">
+      <a href="../../desarrollo/joomla/joomla-local-1-minuto/" class="md-nav__link">
         Instalación local de joomla en 1 minuto con docker
       </a>
     </li>
@@ -756,18 +754,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
       
       
         
@@ -790,7 +786,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_10">
           <span class="md-nav__icon md-icon"></span>
           Laravel
@@ -801,94 +797,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Entorno de desarrollo laravel en 5m con ddev
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../desarrollo/laravel/Laravel-ddev/" class="md-nav__link">
         Entorno de desarrollo laravel en 5m con ddev
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-ddev" class="md-nav__link">
-    Instalación de ddev
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-mkcert" class="md-nav__link">
-    Instalación de mkcert
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-de-proyecto" class="md-nav__link">
-    Configuración de proyecto
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conexion-con-la-base-de-datos" class="md-nav__link">
-    Conexión con la base de datos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#puesta-en-marcha" class="md-nav__link">
-    Puesta en marcha.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#depuracion-con-vscode" class="md-nav__link">
-    Depuración con vscode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ddev-describe" class="md-nav__link">
-    ddev describe
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -900,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
         Gestión de roles y permisos para grupos desde laravel con laratrust
       </a>
     </li>
@@ -914,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel-varios/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/laravel-varios/" class="md-nav__link">
         Laravel varios
       </a>
     </li>
@@ -928,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../migraciones/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/migraciones/" class="md-nav__link">
         Migraciones
       </a>
     </li>
@@ -942,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/swagger/" class="md-nav__link">
         Swagger
       </a>
     </li>
@@ -956,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tests/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/tests/" class="md-nav__link">
         Tests
       </a>
     </li>
@@ -1014,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vim/Enlace_phpstorm_y_remote_server/" class="md-nav__link">
+      <a href="../../desarrollo/vim/Enlace_phpstorm_y_remote_server/" class="md-nav__link">
         Enlace phpstorm y remote server
       </a>
     </li>
@@ -1028,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vim/vim-ddev-debug/" class="md-nav__link">
+      <a href="../../desarrollo/vim/vim-ddev-debug/" class="md-nav__link">
         Depurando con ddev, vim y vdebug
       </a>
     </li>
@@ -1042,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vim/vim-desarrollando/" class="md-nav__link">
+      <a href="../../desarrollo/vim/vim-desarrollando/" class="md-nav__link">
         Vim desarrollando
       </a>
     </li>
@@ -1108,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/Polylang_extras/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/Polylang_extras/" class="md-nav__link">
         Wordpress polylang extas
       </a>
     </li>
@@ -1122,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/VimWordpress/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/VimWordpress/" class="md-nav__link">
         VimWordpress
       </a>
     </li>
@@ -1136,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
         Post instalación de wordpress
       </a>
     </li>
@@ -1150,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wordpress_con_dokku/" class="md-nav__link">
         Wordpress con dokku
       </a>
     </li>
@@ -1164,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/wordpress_local/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wordpress_local/" class="md-nav__link">
         Wordpress en local con docker
       </a>
     </li>
@@ -1178,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/wordpress_superadmin_wp-cli/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wordpress_superadmin_wp-cli/" class="md-nav__link">
         Wordpress superadmin wp cli
       </a>
     </li>
@@ -1192,7 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wordpress/wp-cli_con_docker/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wp-cli_con_docker/" class="md-nav__link">
         WP-CLI con Docker
       </a>
     </li>
@@ -1293,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-nav__link">
+      <a href="../../linux/escritorio/Agente_ssh_en_kde_plasma/" class="md-nav__link">
         Agente ssh en kde plasma
       </a>
     </li>
@@ -1307,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/escritorio/Disco-duro-de-un-apple-en-linux/" class="md-nav__link">
+      <a href="../../linux/escritorio/Disco-duro-de-un-apple-en-linux/" class="md-nav__link">
         Disco duro de un apple en linux
       </a>
     </li>
@@ -1321,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/escritorio/Neon_post_instalacion/" class="md-nav__link">
+      <a href="../../linux/escritorio/Neon_post_instalacion/" class="md-nav__link">
         Post instalación KDE Neon 5.17
       </a>
     </li>
@@ -1335,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/escritorio/i3wm/" class="md-nav__link">
+      <a href="../../linux/escritorio/i3wm/" class="md-nav__link">
         Personalización i3wm
       </a>
     </li>
@@ -1349,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/escritorio/mutt/" class="md-nav__link">
+      <a href="../../linux/escritorio/mutt/" class="md-nav__link">
         Mutt
       </a>
     </li>
@@ -1409,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../proyectos/emma/" class="md-nav__link">
+      <a href="../../proyectos/emma/" class="md-nav__link">
         EMMA
       </a>
     </li>
@@ -1429,14 +1342,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -1461,7 +1376,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Sysadmin
@@ -1474,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/Golpeo_de_puertos/" class="md-nav__link">
+      <a href="../Golpeo_de_puertos/" class="md-nav__link">
         Golpeo de puertos
       </a>
     </li>
@@ -1488,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/NextCloud_VPN_VPS/" class="md-nav__link">
+      <a href="../NextCloud_VPN_VPS/" class="md-nav__link">
         NextCloud VPN VPS
       </a>
     </li>
@@ -1502,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/Servidor-seguridad/" class="md-nav__link">
+      <a href="../Servidor-seguridad/" class="md-nav__link">
         Seguridad y configuración de servidor
       </a>
     </li>
@@ -1516,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/Ubuntu-server-18.04-Afinando/" class="md-nav__link">
+      <a href="../Ubuntu-server-18.04-Afinando/" class="md-nav__link">
         Afinando ubuntu server 18.04
       </a>
     </li>
@@ -1528,11 +1443,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../sysadmin/odoo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Odoo
       </a>
+      
     </li>
   
 
@@ -1577,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/docker/limpieza/" class="md-nav__link">
+      <a href="../docker/limpieza/" class="md-nav__link">
         Limpieza
       </a>
     </li>
@@ -1635,7 +1560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/dokku/dokku-error/" class="md-nav__link">
+      <a href="../dokku/dokku-error/" class="md-nav__link">
         Error en deploy con dokku
       </a>
     </li>
@@ -1649,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/dokku/dokku_app_node/" class="md-nav__link">
+      <a href="../dokku/dokku_app_node/" class="md-nav__link">
         Dokku con node
       </a>
     </li>
@@ -1663,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/dokku/dokku_forzar_versiones_dockfile_personalizado/" class="md-nav__link">
+      <a href="../dokku/dokku_forzar_versiones_dockfile_personalizado/" class="md-nav__link">
         Dokku forzar versiones dockfile personalizado
       </a>
     </li>
@@ -1704,63 +1629,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-ddev" class="md-nav__link">
-    Instalación de ddev
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-mkcert" class="md-nav__link">
-    Instalación de mkcert
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-de-proyecto" class="md-nav__link">
-    Configuración de proyecto
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conexion-con-la-base-de-datos" class="md-nav__link">
-    Conexión con la base de datos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#puesta-en-marcha" class="md-nav__link">
-    Puesta en marcha.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#depuracion-con-vscode" class="md-nav__link">
-    Depuración con vscode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ddev-describe" class="md-nav__link">
-    ddev describe
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1774,130 +1642,9 @@
                   
 
 
-<h1 id="entorno-de-desarrollo-laravel-en-5m-con-ddev">Entorno de desarrollo laravel en 5m con ddev</h1>
-<p><img alt="" src="../img/laravel-ddev/laravel-ddev-01.png" /></p>
-<p>Vamos a mostrar como tener un entorno de desarrollo en local con laravel en menos de 5 mínutos.</p>
-<p>Para ello vamos a utilizar ddev una pequeña pero potente herramienta que nos permite tener nuestro entorno de desarrollo:</p>
-<ul>
-<li>Servidor encriptado.</li>
-<li>MariaDB.</li>
-<li>Instancia de phpMyAdmin</li>
-<li>Servidor MailHog (Verificación de correos electrónicos).</li>
-</ul>
-<p>Vamos a ello.</p>
-<h2 id="instalacion-de-ddev">Instalación de ddev</h2>
-<p>Bajamos e instalamos ddev.</p>
-<pre><code>curl -L https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash
-</code></pre>
-<h2 id="instalacion-de-mkcert">Instalación de mkcert</h2>
-<p>mkcert nos permite tener certificados SSL en local.</p>
-<pre><code>wget https://github.com/FiloSottile/mkcert/releases/download/v1.1.2/mkcert-v1.1.2-linux-amd64
-mv mkcert-v1.1.2-linux-amd64 mkcert
-chmod +x mkcert
-sudo cp mkcert /usr/local/bin/
-mkcert -install
-</code></pre>
-<h2 id="configuracion-de-proyecto">Configuración de proyecto</h2>
-<p>En caso de tener ya nuestro proyecto en laravel entramos en su carpeta.</p>
-<pre><code>ddev config --project-type=laravel --project-name=$PROYECTO --docroot=public
-ddev start
-</code></pre>
-<p>En caso de iniciar un proyecto desde cero.</p>
-<pre><code>ddev config --project-type=laravel --project-name=$PROYECTO --docroot=public --create-docroot
-ddev start
-ddev composer create --prefer-dist laravel/laravel
-ddev composer install
-</code></pre>
-<h2 id="conexion-con-la-base-de-datos">Conexión con la base de datos</h2>
-<p>Si aún no tenemos fichero de configuración .env podemos ejecutar este comando
-para hacer la conexión con la base de datos.</p>
-<pre><code>ddev exec &quot;cat .env.example | sed  -E 's/DB_(HOST|DATABASE|USERNAME|PASSWORD)=(.*)/DB_\1=db/g' &gt; .env&quot;
-</code></pre>
-<p>Si lo preferimos podemos hacerlo a mano editando el fichero <code>.env</code>.</p>
-<pre><code>DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE=db
-DB_USERNAME=db
-DB_PASSWORD=db
-</code></pre>
-<h2 id="puesta-en-marcha">Puesta en marcha.</h2>
-<pre><code>chmod +x artisan
-ddev exec ./artisan key:generate
-ddev exec ./artisan migrate:fresh --seed
-</code></pre>
-<h2 id="depuracion-con-vscode">Depuración con vscode</h2>
-<p>Instalamos la extensión php-debug en vscode.</p>
-<p>Configuración:</p>
-<pre><code>{
-    // Use IntelliSense para saber los atributos posibles.
-    // Mantenga el puntero para ver las descripciones de los existentes atributos.
-    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
-    &quot;version&quot;: &quot;0.2.0&quot;,
-    &quot;configurations&quot;: [
-        {
-            &quot;name&quot;: &quot;Listen for XDebug&quot;,
-            &quot;type&quot;: &quot;php&quot;,
-            &quot;request&quot;: &quot;launch&quot;,
-            &quot;port&quot;: 9000,
-            &quot;hostname&quot;: &quot;0.0.0.0&quot;,
-            &quot;pathMappings&quot;: {
-                &quot;/var/www/html&quot;: &quot;${workspaceRoot}&quot;
-            }
-        },
-        {
-            &quot;name&quot;: &quot;Launch currently open script&quot;,
-            &quot;type&quot;: &quot;php&quot;,
-            &quot;request&quot;: &quot;launch&quot;,
-            &quot;program&quot;: &quot;${file}&quot;,
-            &quot;cwd&quot;: &quot;${fileDirname}&quot;,
-            &quot;port&quot;: 9000
-        }
-    ]
-}
-</code></pre>
-<h2 id="ddev-describe">ddev describe</h2>
-<pre><code>NAME    TYPE     LOCATION             URL                       STATUS
-$PROYECTO  laravel  ~/desarrollo/$PROYECTO  https://$PROYECTO.ddev.site  running
-
-Project Information
--------------------
-PHP version:        7.3
-NFS mount enabled:  false
-Database type:      mariadb
-MariaDB version:    10.2
-
-URLs
-----
-https://$PROYECTO.ddev.site
-https://127.0.0.1:32773
-http://$PROYECTO.ddev.site
-http://127.0.0.1:32774
-
-MySQL/MariaDB Credentials
--------------------------
-Username: &quot;db&quot;, Password: &quot;db&quot;, Default database: &quot;db&quot;
-
-or use root credentials when needed: Username: &quot;root&quot;, Password: &quot;root&quot;
-
-Database hostname and port INSIDE container: db:3306
-To connect to db server inside container or in project settings files:
-mysql --host=db --user=db --password=db --database=db
-Database hostname and port from HOST: 127.0.0.1:32772
-To connect to mysql from your host machine,
-mysql --host=127.0.0.1 --port=32772 --user=db --password=db --database=db
-
-Other Services
---------------
-MailHog (https):    https://$PROYECTO.ddev.site:8026
-MailHog:            http://$PROYECTO.ddev.site:8025
-phpMyAdmin (https): https://$PROYECTO.ddev.site:8037
-phpMyAdmin:         http://$PROYECTO.ddev.site:8036
-
-DDEV ROUTER STATUS: healthy
-ssh-auth status: healthy
-
-</code></pre>
+<h1 id="odoo">Odoo</h1>
+<p>Desde la url [tuDominio]/web/database/manager</p>
+<p>Se pueden hacer backups y restaurar base de datos.</p>
 
 
 
@@ -1924,7 +1671,7 @@ ssh-auth status: healthy
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../../joomla/joomla-local-1-minuto/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Instalación local de joomla en 1 minuto con docker" rel="prev">
+          <a href="../Ubuntu-server-18.04-Afinando/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Afinando ubuntu server 18.04" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1933,20 +1680,20 @@ ssh-auth status: healthy
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Instalación local de joomla en 1 minuto con docker
+                Afinando ubuntu server 18.04
               </div>
             </div>
           </a>
         
         
           
-          <a href="../laravel-roles-permisos-grupos-laratrust/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Gestión de roles y permisos para grupos desde laravel con laratrust" rel="next">
+          <a href="../docker/limpieza/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Limpieza" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Gestión de roles y permisos para grupos desde laravel con laratrust
+                Limpieza
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1978,10 +1725,10 @@ ssh-auth status: healthy
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.indexes", "header.autohide", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.indexes", "header.autohide", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
