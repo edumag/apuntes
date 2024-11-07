@@ -13,8 +13,12 @@ pip install mkdocs-material
 mkdocs serve
 ```
 
-## Actualizar repositorio.
+## Actualizar repositorio
 
 ```
 mkdocs gh-deploy
 ```
+
+## Url externa
+
+[](https://edumag.github.io/apuntes/)
