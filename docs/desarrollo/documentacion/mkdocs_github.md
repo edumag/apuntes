@@ -9,7 +9,7 @@ virtualenv autodocs
 source autodocs/bin/activate
 ```
 
-Generarar fichero requirements.txt
+Generaran fichero requirements.txt
 
 ```
 Babel==2.8.0

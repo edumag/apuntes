@@ -2,6 +2,7 @@
 
 ## Estructura de directorios
 
+```
 src/
   - apps/
     - <Aplicación>/
@@ -19,4 +20,4 @@ src/
       - application/
       - domain/
       - infrastructure/
-
+```
