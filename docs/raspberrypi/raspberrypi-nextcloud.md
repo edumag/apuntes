@@ -1,11 +1,37 @@
-# Post instalación en Raspberry Pi
+# Instalación de nextcloud en una Raspberry Pi
 
-## Automatizar montado de disco externo
+## Post instalación del sistema operativo de  raspberrypi
 
 ### Idiomas
 
     sudo echo "es_ES.UTF-8 UTF-8" >> /etc/locale.gen
     sudo locale-gen
+
+## NoIP
+
+En mi caso utilizo https://dynv6.com/ para obtener el dominio TUDOMINIO.dynv6.net
+
+Obtenemos el script que debemos lanzar para sincronizar la IP.
+
+Y creamos un lanzador para que se ejecute desde el cron.
+
+### launch_dynv6.sh
+
+```
+#!/bin/bash
+
+token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ./dynv6.sh lesolivex.dynv6.net
+```
+
+### Cron
+
+Ejecutamos script cada 5m.
+
+$ crontab -e
+
+```
+0,5,10,15,20,25,30,35,40,45,50,55  * * * * /home/TUUSUARIO/launch_dynv6.sh
+```
 
 ## Instalación de Nginx Proxy Manager
 
@@ -35,6 +61,34 @@ El usuario y el password por defecto de npm es:
 
 admin@example.com changeme
 
+### Configuración
+
+Conectamos dominio al nombre de la aplicación en docker-compose.
+
+![](/home/edumag/desarrollo/apuntes/docs/img/raspberrypi/raspberrypi-01.png)
+
+Conectamos el certificado a la aplicación.
+
+![](/home/edumag/desarrollo/apuntes/docs/img/raspberrypi/raspberrypi-02.png)
+
+
+
+## Automatizar montado de disco externo
+
+### /etc/fstab
+
+    UUID=UUIDUNICO /mnt/data/ ext4 default,noatime 0 0
+
+Puedes utilizar el comando **blkid** para obtener el UUID.
+
+Permisos:
+
+    sudo chmod 770 /mnt/data/nextcloud/data
+    sudo chown -R 1000:33 /mnt/data/nextcloud/data
+
+El usuario 1000 es TUUSUARIO.
+El usuario 33 es www-data.
+
 
 ## Instalación de nextcloud
 
@@ -46,23 +100,9 @@ Permisos para usuario
 
     sudo usermod -aG docker $USER
 
-## Añadir disco externo
-
-### /etc/fstab
-
-    UUID=UUIDUNICO /mnt/data/ext4 default,noatime 0 0
-
-Puedes utilizar el comando **blkid** para obtener el UUID.
-
-Permisos:
-
-    sudo chmod 770 /mnt/data/nextcloud/data
-    sudo chown -R 1000:33 /mnt/data/nextcloud/data
-
-El usuario 1000 en mi caso es TUUSUARIO.
-El usuario 33 es www-data.
-
 ## nextcloud/docker-compose.yml
+
+Conectamos las redes npm y nextcloud para nginx-proxy-manager haga la conexión con nextcloud.
 
 ```
 version: '3'
@@ -122,7 +162,7 @@ networks:
 
 ### Añadir dominio de confianza
 
-    docker exec -it --user www-data nextcloud-app php occ config:system:set trusted_domains 2 --value=raspberrypi
+    docker exec -it --user www-data nextcloud-app php occ config:system:set trusted_domains 2 --value=TUDOMINIO.dynv6.net
 
 ### Configuración de nextcloud
 
@@ -173,6 +213,3 @@ $CONFIG = array (
   'maintenance' => false,
 );
 ```
-## NoIP
-
-
