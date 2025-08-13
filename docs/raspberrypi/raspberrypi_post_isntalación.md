@@ -126,6 +126,8 @@ networks:
 
 ### Configuración de nextcloud
 
+app/config/config.php
+
 ```
 <?php
 $CONFIG = array (
