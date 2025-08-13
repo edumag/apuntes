@@ -1951,6 +1951,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuracion-de-nextcloud" class="md-nav__link">
+    Configuración de nextcloud
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2447,6 +2454,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuracion-de-nextcloud" class="md-nav__link">
+    Configuración de nextcloud
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2511,14 +2525,14 @@ networks:
 </code></pre>
 <h2 id="anadir-disco-externo">Añadir disco externo</h2>
 <h3 id="etcfstab">/etc/fstab</h3>
-<pre><code>UUID=UUID-DEL-UN-UNICO-UNICO /mnt/data/ext4 default,noatime 0 0
+<pre><code>UUID=UUIDUNICO /mnt/data/ext4 default,noatime 0 0
 </code></pre>
 <p>Puedes utilizar el comando <strong>blkid</strong> para obtener el UUID.</p>
 <p>Permisos:</p>
 <pre><code>sudo chmod 770 /mnt/data/nextcloud/data
 sudo chown -R 1000:33 /mnt/data/nextcloud/data
 </code></pre>
-<p>El usuario 1000 en mi caso es edumag.
+<p>El usuario 1000 en mi caso es TUUSUARIO.
 El usuario 33 es www-data.</p>
 <h2 id="nextclouddocker-composeyml">nextcloud/docker-compose.yml</h2>
 <pre><code>version: '3'
@@ -2534,8 +2548,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=xxxxxxxxxxxxxx
       - MYSQL_PASSWORD=xxxxxxxxxxxxxx
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
+      - MYSQL_DATABASE=xxxxxxxxx
+      - MYSQL_USER=xxxxxxxxx
     restart: unless-stopped
     networks:
       - nextcloud
@@ -2552,10 +2566,6 @@ services:
       - ./app/config:/var/www/html/config
       - /mnt/data/nextcloud/data:/var/www/html/data
       - /etc/localtime:/etc/localtime:ro
-    environment:
-      - VIRTUAL_HOST=lesolivex.dynv6.net
-      - LETSENCRYPT_HOST=lesolivex.dynv6.net
-      - LETSENCRYPT_EMAIL=edu@lesolivex.com
     restart: unless-stopped
     networks:
       - npm
@@ -2579,6 +2589,51 @@ networks:
 </code></pre>
 <h3 id="anadir-dominio-de-confianza">Añadir dominio de confianza</h3>
 <pre><code>docker exec -it --user www-data nextcloud-app php occ config:system:set trusted_domains 2 --value=raspberrypi
+</code></pre>
+<h3 id="configuracion-de-nextcloud">Configuración de nextcloud</h3>
+<pre><code>&lt;?php
+$CONFIG = array (
+  'htaccess.RewriteBase' =&gt; '/',
+  'memcache.local' =&gt; '\\OC\\Memcache\\APCu',
+  'apps_paths' =&gt;
+  array (
+    0 =&gt;
+    array (
+      'path' =&gt; '/var/www/html/apps',
+      'url' =&gt; '/apps',
+      'writable' =&gt; false,
+    ),
+    1 =&gt;
+    array (
+      'path' =&gt; '/var/www/html/custom_apps',
+      'url' =&gt; '/custom_apps',
+      'writable' =&gt; true,
+    ),
+  ),
+  'upgrade.disable-web' =&gt; true,
+  'instanceid' =&gt; 'ocupzvz57dn1',
+  'passwordsalt' =&gt; 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  'secret' =&gt; 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  'trusted_domains' =&gt;
+  array (
+    0 =&gt; 'TUDOMINIO.dynv6.net',
+    1 =&gt; 'raspberrypi',
+  ),
+  'datadirectory' =&gt; '/var/www/html/data',
+  'dbtype' =&gt; 'mysql',
+  'version' =&gt; '31.0.7.1',
+  'overwrite.cli.url' =&gt; 'https://TUDOMINIO.dynv6.net',
+  'overwriteprotocol' =&gt; 'https', // Evitar error al conectar desde otra app.
+  'dbname' =&gt; 'nextcloud',
+  'dbhost' =&gt; 'db',
+  'dbport' =&gt; '',
+  'dbtableprefix' =&gt; 'oc_',
+  'mysql.utf8mb4' =&gt; true,
+  'dbuser' =&gt; 'nextcloud',
+  'dbpassword' =&gt; 'xxxxxxxxxxxxxx',
+  'installed' =&gt; true,
+  'maintenance' =&gt; false,
+);
 </code></pre>
 <h2 id="noip">NoIP</h2>
 
