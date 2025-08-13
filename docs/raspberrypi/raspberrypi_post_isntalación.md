@@ -50,7 +50,7 @@ Permisos para usuario
 
 ### /etc/fstab
 
-    UUID=UUID-DEL-UN-UNICO-UNICO /mnt/data/ext4 default,noatime 0 0
+    UUID=UUIDUNICO /mnt/data/ext4 default,noatime 0 0
 
 Puedes utilizar el comando **blkid** para obtener el UUID.
 
@@ -59,7 +59,7 @@ Permisos:
     sudo chmod 770 /mnt/data/nextcloud/data
     sudo chown -R 1000:33 /mnt/data/nextcloud/data
 
-El usuario 1000 en mi caso es edumag.
+El usuario 1000 en mi caso es TUUSUARIO.
 El usuario 33 es www-data.
 
 ## nextcloud/docker-compose.yml
@@ -78,8 +78,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=xxxxxxxxxxxxxx
       - MYSQL_PASSWORD=xxxxxxxxxxxxxx
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
+      - MYSQL_DATABASE=xxxxxxxxx
+      - MYSQL_USER=xxxxxxxxx
     restart: unless-stopped
     networks:
       - nextcloud
@@ -96,10 +96,6 @@ services:
       - ./app/config:/var/www/html/config
       - /mnt/data/nextcloud/data:/var/www/html/data
       - /etc/localtime:/etc/localtime:ro
-    environment:
-      - VIRTUAL_HOST=lesolivex.dynv6.net
-      - LETSENCRYPT_HOST=lesolivex.dynv6.net
-      - LETSENCRYPT_EMAIL=edu@lesolivex.com
     restart: unless-stopped
     networks:
       - npm
@@ -128,6 +124,53 @@ networks:
 
     docker exec -it --user www-data nextcloud-app php occ config:system:set trusted_domains 2 --value=raspberrypi
 
+### Configuración de nextcloud
+
+```
+<?php
+$CONFIG = array (
+  'htaccess.RewriteBase' => '/',
+  'memcache.local' => '\\OC\\Memcache\\APCu',
+  'apps_paths' =>
+  array (
+    0 =>
+    array (
+      'path' => '/var/www/html/apps',
+      'url' => '/apps',
+      'writable' => false,
+    ),
+    1 =>
+    array (
+      'path' => '/var/www/html/custom_apps',
+      'url' => '/custom_apps',
+      'writable' => true,
+    ),
+  ),
+  'upgrade.disable-web' => true,
+  'instanceid' => 'ocupzvz57dn1',
+  'passwordsalt' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  'secret' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  'trusted_domains' =>
+  array (
+    0 => 'TUDOMINIO.dynv6.net',
+    1 => 'raspberrypi',
+  ),
+  'datadirectory' => '/var/www/html/data',
+  'dbtype' => 'mysql',
+  'version' => '31.0.7.1',
+  'overwrite.cli.url' => 'https://TUDOMINIO.dynv6.net',
+  'overwriteprotocol' => 'https', // Evitar error al conectar desde otra app.
+  'dbname' => 'nextcloud',
+  'dbhost' => 'db',
+  'dbport' => '',
+  'dbtableprefix' => 'oc_',
+  'mysql.utf8mb4' => true,
+  'dbuser' => 'nextcloud',
+  'dbpassword' => 'xxxxxxxxxxxxxx',
+  'installed' => true,
+  'maintenance' => false,
+);
+```
 ## NoIP
 
 
