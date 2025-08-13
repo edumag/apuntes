@@ -65,11 +65,11 @@ admin@example.com changeme
 
 Conectamos dominio al nombre de la aplicación en docker-compose.
 
-![](/home/edumag/desarrollo/apuntes/docs/img/raspberrypi/raspberrypi-01.png)
+![](../img/raspberrypi/raspberrypi-01.png)
 
 Conectamos el certificado a la aplicación.
 
-![](/home/edumag/desarrollo/apuntes/docs/img/raspberrypi/raspberrypi-02.png)
+![](../img/raspberrypi/raspberrypi-02.png)
 
 
 
