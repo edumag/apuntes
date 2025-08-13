@@ -12,7 +12,7 @@
         <meta name="author" content="Eduardo Magrané">
       
       
-        <link rel="canonical" href="https://lesolivex.com/apuntes/raspberrypi/raspberrypi_post_isntalaci%C3%B3n/">
+        <link rel="canonical" href="https://lesolivex.com/apuntes/raspberrypi/raspberrypi-nextcloud/">
       
       
         <link rel="prev" href="../../proyectos/emma/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Post instalación en Raspberry Pi - Apuntes</title>
+        <title>Instalación de nextcloud en una Raspberry Pi - Apuntes</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#post-instalacion-en-raspberry-pi" class="md-skip">
+        <a href="#instalacion-de-nextcloud-en-una-raspberry-pi" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Post instalación en Raspberry Pi
+              Instalación de nextcloud en una Raspberry Pi
             
           </span>
         </div>
@@ -1836,7 +1836,7 @@
           
   
   <span class="md-ellipsis">
-    Post instalación en Raspberry Pi
+    Instalación de nextcloud en una Raspberry Pi
   </span>
   
 
@@ -1847,7 +1847,7 @@
         
   
   <span class="md-ellipsis">
-    Post instalación en Raspberry Pi
+    Instalación de nextcloud en una Raspberry Pi
   </span>
   
 
@@ -1869,11 +1869,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automatizar-montado-de-disco-externo" class="md-nav__link">
-    Automatizar montado de disco externo
+  <a href="#post-instalacion-del-sistema-operativo-de-raspberrypi" class="md-nav__link">
+    Post instalación del sistema operativo de  raspberrypi
   </a>
   
-    <nav class="md-nav" aria-label="Automatizar montado de disco externo">
+    <nav class="md-nav" aria-label="Post instalación del sistema operativo de raspberrypi">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1889,25 +1889,58 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#noip" class="md-nav__link">
+    NoIP
+  </a>
+  
+    <nav class="md-nav" aria-label="NoIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch_dynv6sh" class="md-nav__link">
+    launch_dynv6.sh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    Cron
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-de-nginx-proxy-manager" class="md-nav__link">
     Instalación de Nginx Proxy Manager
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-nextcloud" class="md-nav__link">
-    Instalación de nextcloud
+    <nav class="md-nav" aria-label="Instalación de Nginx Proxy Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    Configuración
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anadir-disco-externo" class="md-nav__link">
-    Añadir disco externo
+  <a href="#automatizar-montado-de-disco-externo" class="md-nav__link">
+    Automatizar montado de disco externo
   </a>
   
-    <nav class="md-nav" aria-label="Añadir disco externo">
+    <nav class="md-nav" aria-label="Automatizar montado de disco externo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1919,6 +1952,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-nextcloud" class="md-nav__link">
+    Instalación de nextcloud
+  </a>
   
 </li>
       
@@ -1960,13 +2000,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#noip" class="md-nav__link">
-    NoIP
-  </a>
   
 </li>
       
@@ -2372,11 +2405,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automatizar-montado-de-disco-externo" class="md-nav__link">
-    Automatizar montado de disco externo
+  <a href="#post-instalacion-del-sistema-operativo-de-raspberrypi" class="md-nav__link">
+    Post instalación del sistema operativo de  raspberrypi
   </a>
   
-    <nav class="md-nav" aria-label="Automatizar montado de disco externo">
+    <nav class="md-nav" aria-label="Post instalación del sistema operativo de raspberrypi">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2392,25 +2425,58 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#noip" class="md-nav__link">
+    NoIP
+  </a>
+  
+    <nav class="md-nav" aria-label="NoIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch_dynv6sh" class="md-nav__link">
+    launch_dynv6.sh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    Cron
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-de-nginx-proxy-manager" class="md-nav__link">
     Instalación de Nginx Proxy Manager
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-nextcloud" class="md-nav__link">
-    Instalación de nextcloud
+    <nav class="md-nav" aria-label="Instalación de Nginx Proxy Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    Configuración
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anadir-disco-externo" class="md-nav__link">
-    Añadir disco externo
+  <a href="#automatizar-montado-de-disco-externo" class="md-nav__link">
+    Automatizar montado de disco externo
   </a>
   
-    <nav class="md-nav" aria-label="Añadir disco externo">
+    <nav class="md-nav" aria-label="Automatizar montado de disco externo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2422,6 +2488,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-nextcloud" class="md-nav__link">
+    Instalación de nextcloud
+  </a>
   
 </li>
       
@@ -2466,13 +2539,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#noip" class="md-nav__link">
-    NoIP
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2488,11 +2554,25 @@
                   
 
 
-<h1 id="post-instalacion-en-raspberry-pi">Post instalación en Raspberry Pi</h1>
-<h2 id="automatizar-montado-de-disco-externo">Automatizar montado de disco externo</h2>
+<h1 id="instalacion-de-nextcloud-en-una-raspberry-pi">Instalación de nextcloud en una Raspberry Pi</h1>
+<h2 id="post-instalacion-del-sistema-operativo-de-raspberrypi">Post instalación del sistema operativo de  raspberrypi</h2>
 <h3 id="idiomas">Idiomas</h3>
 <pre><code>sudo echo "es_ES.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen
 sudo locale-gen
+</code></pre>
+<h2 id="noip">NoIP</h2>
+<p>En mi caso utilizo https://dynv6.com/ para obtener el dominio TUDOMINIO.dynv6.net</p>
+<p>Obtenemos el script que debemos lanzar para sincronizar la IP.</p>
+<p>Y creamos un lanzador para que se ejecute desde el cron.</p>
+<h3 id="launch_dynv6sh">launch_dynv6.sh</h3>
+<pre><code>#!/bin/bash
+
+token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ./dynv6.sh lesolivex.dynv6.net
+</code></pre>
+<h3 id="cron">Cron</h3>
+<p>Ejecutamos script cada 5m.</p>
+<p>$ crontab -e</p>
+<pre><code>0,5,10,15,20,25,30,35,40,45,50,55  * * * * /home/TUUSUARIO/launch_dynv6.sh
 </code></pre>
 <h2 id="instalacion-de-nginx-proxy-manager">Instalación de Nginx Proxy Manager</h2>
 <pre><code>services:
@@ -2516,6 +2596,22 @@ networks:
 </code></pre>
 <p>El usuario y el password por defecto de npm es:</p>
 <p>admin@example.com changeme</p>
+<h3 id="configuracion">Configuración</h3>
+<p>Conectamos dominio al nombre de la aplicación en docker-compose.</p>
+<p><img alt="" src="/home/edumag/desarrollo/apuntes/docs/img/raspberrypi/raspberrypi-01.png" /></p>
+<p>Conectamos el certificado a la aplicación.</p>
+<p><img alt="" src="/home/edumag/desarrollo/apuntes/docs/img/raspberrypi/raspberrypi-02.png" /></p>
+<h2 id="automatizar-montado-de-disco-externo">Automatizar montado de disco externo</h2>
+<h3 id="etcfstab">/etc/fstab</h3>
+<pre><code>UUID=UUIDUNICO /mnt/data/ ext4 default,noatime 0 0
+</code></pre>
+<p>Puedes utilizar el comando <strong>blkid</strong> para obtener el UUID.</p>
+<p>Permisos:</p>
+<pre><code>sudo chmod 770 /mnt/data/nextcloud/data
+sudo chown -R 1000:33 /mnt/data/nextcloud/data
+</code></pre>
+<p>El usuario 1000 es TUUSUARIO.
+El usuario 33 es www-data.</p>
 <h2 id="instalacion-de-nextcloud">Instalación de nextcloud</h2>
 <p>Instalamos docker y docker-compose</p>
 <pre><code>sudo apt install docker docker-compose
@@ -2523,18 +2619,8 @@ networks:
 <p>Permisos para usuario</p>
 <pre><code>sudo usermod -aG docker $USER
 </code></pre>
-<h2 id="anadir-disco-externo">Añadir disco externo</h2>
-<h3 id="etcfstab">/etc/fstab</h3>
-<pre><code>UUID=UUIDUNICO /mnt/data/ext4 default,noatime 0 0
-</code></pre>
-<p>Puedes utilizar el comando <strong>blkid</strong> para obtener el UUID.</p>
-<p>Permisos:</p>
-<pre><code>sudo chmod 770 /mnt/data/nextcloud/data
-sudo chown -R 1000:33 /mnt/data/nextcloud/data
-</code></pre>
-<p>El usuario 1000 en mi caso es TUUSUARIO.
-El usuario 33 es www-data.</p>
 <h2 id="nextclouddocker-composeyml">nextcloud/docker-compose.yml</h2>
+<p>Conectamos las redes npm y nextcloud para nginx-proxy-manager haga la conexión con nextcloud.</p>
 <pre><code>version: '3'
 
 services:
@@ -2588,7 +2674,7 @@ networks:
 <pre><code>docker exec -it --user www-data nextcloud-app  php occ files:scan --all
 </code></pre>
 <h3 id="anadir-dominio-de-confianza">Añadir dominio de confianza</h3>
-<pre><code>docker exec -it --user www-data nextcloud-app php occ config:system:set trusted_domains 2 --value=raspberrypi
+<pre><code>docker exec -it --user www-data nextcloud-app php occ config:system:set trusted_domains 2 --value=TUDOMINIO.dynv6.net
 </code></pre>
 <h3 id="configuracion-de-nextcloud">Configuración de nextcloud</h3>
 <p>app/config/config.php</p>
@@ -2636,7 +2722,6 @@ $CONFIG = array (
   'maintenance' =&gt; false,
 );
 </code></pre>
-<h2 id="noip">NoIP</h2>
 
 
 
