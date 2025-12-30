@@ -12,13 +12,13 @@
         <meta name="author" content="Eduardo Magrané">
       
       
-        <link rel="canonical" href="https://lesolivex.com/apuntes/desarrollo/VirtualHost-apache-local/">
+        <link rel="canonical" href="https://lesolivex.com/apuntes/sysadmin/VPS-debian13/">
       
       
-        <link rel="prev" href="../Markdown-pandoc-varios/">
+        <link rel="prev" href="../Ubuntu-server-18.04-Afinando/">
       
       
-        <link rel="next" href="../clean/">
+        <link rel="next" href="../odoo/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Crear virtual host en local con apache - Apuntes</title>
+        <title>Preparar servidor VPS Debian 13 - Apuntes</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#crear-virtual-host-en-local-con-apache" class="md-skip">
+        <a href="#preparar-servidor-vps-debian-13" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Crear virtual host en local con apache
+              Preparar servidor VPS Debian 13
             
           </span>
         </div>
@@ -205,13 +205,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../Markdown-pandoc-varios/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../desarrollo/Markdown-pandoc-varios/" class="md-tabs__link">
           
   
     
@@ -296,11 +294,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../sysadmin/Golpeo_de_puertos/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Golpeo_de_puertos/" class="md-tabs__link">
           
   
     
@@ -374,8 +374,6 @@
       
   
   
-    
-  
   
     
     
@@ -408,13 +406,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -427,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Desarrollo
@@ -440,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Markdown-pandoc-varios/" class="md-nav__link">
+      <a href="../../desarrollo/Markdown-pandoc-varios/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,29 +456,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Crear virtual host en local con apache
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../desarrollo/VirtualHost-apache-local/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -489,67 +467,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-apache" class="md-nav__link">
-    Instalación de apache
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creamos-fichero-de-configuracion" class="md-nav__link">
-    Creamos fichero de configuración
-  </a>
-  
-    <nav class="md-nav" aria-label="Creamos fichero de configuración">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#localvirtualhostconf" class="md-nav__link">
-    localvirtualhost.conf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#activamos-configuracion" class="md-nav__link">
-    Activamos configuración
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permisos" class="md-nav__link">
-    Permisos
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -561,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clean/" class="md-nav__link">
+      <a href="../../desarrollo/clean/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
+      <a href="../../desarrollo/Ionic/DesarrolloIonicUbuntu18.04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -727,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arquitectura/hexagonal/Arquitectura-hexagonal/" class="md-nav__link">
+      <a href="../../desarrollo/arquitectura/hexagonal/Arquitectura-hexagonal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -803,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../documentacion/mkdocs_github/" class="md-nav__link">
+      <a href="../../desarrollo/documentacion/mkdocs_github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -871,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
+      <a href="../../desarrollo/drupal/Instalacion-drupal-commerce-demo-con-ddev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../editando_codigo/Tips_vscode/" class="md-nav__link">
+      <a href="../../desarrollo/editando_codigo/Tips_vscode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1009,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/Eliminar_%C3%BAltimos_commits/" class="md-nav__link">
+      <a href="../../desarrollo/git/Eliminar_%C3%BAltimos_commits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1029,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/git_submodulos/" class="md-nav__link">
+      <a href="../../desarrollo/git/git_submodulos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../joomla/joomla-local-1-minuto/" class="md-nav__link">
+      <a href="../../desarrollo/joomla/joomla-local-1-minuto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel/Laravel-ddev/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/Laravel-ddev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1195,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/laravel-roles-permisos-grupos-laratrust/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1215,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel/laravel-varios/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/laravel-varios/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel/migraciones/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/migraciones/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1255,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel/swagger/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/swagger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1275,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../laravel/tests/" class="md-nav__link">
+      <a href="../../desarrollo/laravel/tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1347,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim/Enlace_phpstorm_y_remote_server/" class="md-nav__link">
+      <a href="../../desarrollo/vim/Enlace_phpstorm_y_remote_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1367,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim/vim-ddev-debug/" class="md-nav__link">
+      <a href="../../desarrollo/vim/vim-ddev-debug/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1387,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim/vim-desarrollando/" class="md-nav__link">
+      <a href="../../desarrollo/vim/vim-desarrollando/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1465,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpress/Polylang_extras/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/Polylang_extras/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1485,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/postinstalacion_wordpress_con_dokku/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1505,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpress/wordpress_con_dokku/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wordpress_con_dokku/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpress/wordpress_local/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wordpress_local/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpress/wordpress_superadmin_wp-cli/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wordpress_superadmin_wp-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1565,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpress/wp-cli_con_docker/" class="md-nav__link">
+      <a href="../../desarrollo/wordpress/wp-cli_con_docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1929,6 +1846,8 @@
       
   
   
+    
+  
   
     
     
@@ -1953,13 +1872,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
@@ -1972,7 +1891,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Sysadmin
@@ -1985,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/Golpeo_de_puertos/" class="md-nav__link">
+      <a href="../Golpeo_de_puertos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2005,7 +1924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/NextCloud_VPN_VPS/" class="md-nav__link">
+      <a href="../NextCloud_VPN_VPS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2025,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/Servidor-seguridad/" class="md-nav__link">
+      <a href="../Servidor-seguridad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2045,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/Ubuntu-server-18.04-Afinando/" class="md-nav__link">
+      <a href="../Ubuntu-server-18.04-Afinando/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2063,9 +1982,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../sysadmin/VPS-debian13/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Preparar servidor VPS Debian 13
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2074,6 +2013,285 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actualizar" class="md-nav__link">
+    Actualizar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-locales" class="md-nav__link">
+    Instalar locales
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsyslog" class="md-nav__link">
+    rsyslog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+    <nav class="md-nav" aria-label="ssh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambio-de-puerto" class="md-nav__link">
+    Cambio de puerto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llave-ssh" class="md-nav__link">
+    Llave ssh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshd_config" class="md-nav__link">
+    sshd_config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servidor-de-correo" class="md-nav__link">
+    Servidor de correo
+  </a>
+  
+    <nav class="md-nav" aria-label="Servidor de correo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-postfix" class="md-nav__link">
+    Configuración de postfix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcpostfixmaincf" class="md-nav__link">
+    /etc/postfix/main.cf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcaliases" class="md-nav__link">
+    /etc/aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-correo" class="md-nav__link">
+    Enviar correo.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logcheck" class="md-nav__link">
+    logcheck
+  </a>
+  
+    <nav class="md-nav" aria-label="logcheck">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-logcheck" class="md-nav__link">
+    Configuración de logcheck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probamos-la-salida" class="md-nav__link">
+    Probamos la salida:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
+    Actualizaciones de seguridad automáticas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cortafuegos" class="md-nav__link">
+    Cortafuegos
+  </a>
+  
+    <nav class="md-nav" aria-label="Cortafuegos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
+    Ver reglas del cortafuegos:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-ips-bloqueadas" class="md-nav__link">
+    Ver IPs bloqueadas:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail2ban" class="md-nav__link">
+    fail2ban
+  </a>
+  
+    <nav class="md-nav" aria-label="fail2ban">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consultar-logs-de-fail2ban" class="md-nav__link">
+    Consultar logs de fail2ban
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varios" class="md-nav__link">
+    Varios
+  </a>
+  
+    <nav class="md-nav" aria-label="Varios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lynis" class="md-nav__link">
+    Lynis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chkrootkit" class="md-nav__link">
+    chkrootkit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clamav" class="md-nav__link">
+    Clamav
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    Scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar" class="md-nav__link">
+    Instalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar" class="md-nav__link">
+    Ejecutar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envio-del-informe" class="md-nav__link">
+    Envío del informe.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2085,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/odoo/" class="md-nav__link">
+      <a href="../odoo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2105,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/systemd/" class="md-nav__link">
+      <a href="../systemd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2165,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/docker/limpieza/" class="md-nav__link">
+      <a href="../docker/limpieza/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2237,7 +2455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/dokku/dokku-error/" class="md-nav__link">
+      <a href="../dokku/dokku-error/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2257,7 +2475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/dokku/dokku_app_node/" class="md-nav__link">
+      <a href="../dokku/dokku_app_node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2277,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sysadmin/dokku/dokku_forzar_versiones_dockfile_personalizado/" class="md-nav__link">
+      <a href="../dokku/dokku_forzar_versiones_dockfile_personalizado/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2333,23 +2551,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instalacion-de-apache" class="md-nav__link">
-    Instalación de apache
+  <a href="#actualizar" class="md-nav__link">
+    Actualizar
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creamos-fichero-de-configuracion" class="md-nav__link">
-    Creamos fichero de configuración
+  <a href="#instalar-locales" class="md-nav__link">
+    Instalar locales
   </a>
   
-    <nav class="md-nav" aria-label="Creamos fichero de configuración">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsyslog" class="md-nav__link">
+    rsyslog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+    <nav class="md-nav" aria-label="ssh">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#localvirtualhostconf" class="md-nav__link">
-    localvirtualhost.conf
+  <a href="#cambio-de-puerto" class="md-nav__link">
+    Cambio de puerto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llave-ssh" class="md-nav__link">
+    Llave ssh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshd_config" class="md-nav__link">
+    sshd_config
   </a>
   
 </li>
@@ -2360,16 +2606,206 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activamos-configuracion" class="md-nav__link">
-    Activamos configuración
+  <a href="#servidor-de-correo" class="md-nav__link">
+    Servidor de correo
+  </a>
+  
+    <nav class="md-nav" aria-label="Servidor de correo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-postfix" class="md-nav__link">
+    Configuración de postfix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcpostfixmaincf" class="md-nav__link">
+    /etc/postfix/main.cf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcaliases" class="md-nav__link">
+    /etc/aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-correo" class="md-nav__link">
+    Enviar correo.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logcheck" class="md-nav__link">
+    logcheck
+  </a>
+  
+    <nav class="md-nav" aria-label="logcheck">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-logcheck" class="md-nav__link">
+    Configuración de logcheck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probamos-la-salida" class="md-nav__link">
+    Probamos la salida:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
+    Actualizaciones de seguridad automáticas
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#permisos" class="md-nav__link">
-    Permisos
+  <a href="#cortafuegos" class="md-nav__link">
+    Cortafuegos
   </a>
+  
+    <nav class="md-nav" aria-label="Cortafuegos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
+    Ver reglas del cortafuegos:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-ips-bloqueadas" class="md-nav__link">
+    Ver IPs bloqueadas:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail2ban" class="md-nav__link">
+    fail2ban
+  </a>
+  
+    <nav class="md-nav" aria-label="fail2ban">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consultar-logs-de-fail2ban" class="md-nav__link">
+    Consultar logs de fail2ban
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varios" class="md-nav__link">
+    Varios
+  </a>
+  
+    <nav class="md-nav" aria-label="Varios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lynis" class="md-nav__link">
+    Lynis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chkrootkit" class="md-nav__link">
+    chkrootkit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clamav" class="md-nav__link">
+    Clamav
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    Scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar" class="md-nav__link">
+    Instalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar" class="md-nav__link">
+    Ejecutar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envio-del-informe" class="md-nav__link">
+    Envío del informe.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2388,40 +2824,284 @@
                   
 
 
-<h1 id="crear-virtual-host-en-local-con-apache">Crear virtual host en local con apache</h1>
-<p><img alt="" src="../img/VirtualHost-apache-local/VirtualHost-apache-local-01.png" /></p>
-<h2 id="instalacion-de-apache">Instalación de apache</h2>
-<pre><code>sudo apt-get install apache2 libapache2-mod-php7.2 php7.2 php7.2-xml php7.2-gd php7.2-opcache php7.2-mbstring
+<h1 id="preparar-servidor-vps-debian-13">Preparar servidor VPS Debian 13</h1>
+<p>Post instalación de servidor linux debian 13, y configuración de seguridad.</p>
+<pre><code class="language-bash">$ fastfetch
+        _,met$$$$$gg.          debian@vps-58a7ea55
+     ,g$$$$$$$$$$$$$$$P.       -------------------
+   ,g$$P&quot;&quot;       &quot;&quot;&quot;Y$$.&quot;.     OS: Debian GNU/Linux 13 (trixie) x86_64
+  ,$$P'              `$$$.     Host: OpenStack Nova (19.3.2)
+',$$P       ,ggs.     `$$b:    Kernel: Linux 6.12.57+deb13-cloud-amd64
+`d$$'     ,$P&quot;'   .    $$$     Uptime: 55 mins
+ $$P      d$'     ,    $$P     Packages: 417 (dpkg)
+ $$:      $$.   -    ,d$$'     Shell: bash 5.2.37
+ $$;      Y$b._   _,d$P'       Terminal: /dev/pts/1
+ Y$$.    `.`&quot;Y$$$$P&quot;'          CPU: 4 x Intel Core (Haswell, no TSX) (4) @ 2.39 GHz
+ `$$b      &quot;-.__               GPU: Cirrus Logic GD 5446
+  `Y$$b                        Memory: 409.91 MiB / 7.58 GiB (5%)
+   `Y$$.                       Swap: Disabled
+     `$$b.                     Disk (/): 1.59 GiB / 73.62 GiB (2%) - ext4
+       `Y$$b.                  Local IP (ens3): **.**.***.*/32
+         `&quot;Y$b._               Locale: es_ES.UTF-8
+             `&quot;&quot;&quot;&quot;
 </code></pre>
-<p>Una vez instalado apache</p>
-<pre><code>sudo a2enmod rewrite
+<h2 id="actualizar">Actualizar</h2>
+<pre><code>sudo apt update &amp;&amp; sudo apt upgrade
 </code></pre>
-<h2 id="creamos-fichero-de-configuracion">Creamos fichero de configuración</h2>
-<pre><code>cd /etc/apache2/sites-available/
+<h2 id="instalar-locales">Instalar locales</h2>
+<pre><code>sudo dpkg-reconfigure locales
+sudo apt-get install locales-all
 </code></pre>
-<h3 id="localvirtualhostconf">localvirtualhost.conf</h3>
-<pre><code>&lt;VirtualHost *:80&gt;
-    ServerName $DOMINIO_LOCAL
-    ServerAdmin webmaster@localhost
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-    DocumentRoot $DIR_PROYECTO
-    &lt;Directory  &quot;$DIR_PROYECTO&quot;&gt;
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    &lt;/Directory&gt;
-&lt;/VirtualHost&gt;
+<h2 id="rsyslog">rsyslog</h2>
+<pre><code>sudo apt-get install --reinstall rsyslog
+</code></pre>
+<h2 id="ssh">ssh</h2>
+<h3 id="cambio-de-puerto">Cambio de puerto</h3>
+<pre><code>sudo vim /etc/ssh/sshd_config
 
-# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+- # Port 22
++ Port 3333 # El que tu quieras en verdad.
 </code></pre>
-<h2 id="activamos-configuracion">Activamos configuración</h2>
-<pre><code>sudo a2ensite localvirtualhost.conf
-sudo systemctl restart apache2
+<p>Reiniciamos servicio:</p>
+<pre><code>sudo systemctl restart sshd
 </code></pre>
-<h2 id="permisos">Permisos</h2>
-<pre><code>sudo chgrp -R www-data $DIR_PROYECTO
-sudo chmod -R 775 $DIR_PROYECTO/storage
+<p>Ahora para entrar de nuevo deberemos especificar el puerto.</p>
+<pre><code>ssh -p port user@server
+</code></pre>
+<p>Incluso añadirlo en el ~/.ssh/config para no tener que especificarlo todo el
+rato.</p>
+<pre><code>Host server
+    IdentityFile ~/.ssh/id_rsa
+    User ubuntu
+    Hostname server.com
+    Port 1111
+</code></pre>
+<h3 id="llave-ssh">Llave ssh</h3>
+<p>Copiar llave publica al servidor para poder entrar sin contraseña.</p>
+<pre><code>ssh-copy-id -i ~/.ssh/LLAVE USUARIO@SERVIDOR
+</code></pre>
+<h3 id="sshd_config">sshd_config</h3>
+<p>Configuración más que recomendada:</p>
+<p>Si activamos estas reglas tener en cuenta que tenéis que tener configurado
+previamente la llave ssh en tu ordenador y añadida al servidor.</p>
+<pre><code>PermitRootLogin no        # No se permite acceso a root desde ssh.
+AllowUsers USER1 USER2    # Lista de usuarios que si pueden entrar.
+PasswordAuthentication no # Solo permitimos entrar con clave ssh.
+</code></pre>
+<h2 id="servidor-de-correo">Servidor de correo</h2>
+<pre><code>sudo apt install postfix
+</code></pre>
+<p>Seleccionamos "Internet site"</p>
+<p>y ponemos el nombre del servidor smtp.</p>
+<h3 id="configuracion-de-postfix">Configuración de postfix</h3>
+<p>Configuramos servidor de correo para poder recibir correos de aviso.</p>
+<h3 id="etcpostfixmaincf">/etc/postfix/main.cf</h3>
+<p>Modificamos configuración para que no acepte correo del exterior.</p>
+<pre><code>inet_interfaces = loopback-only
+</code></pre>
+<h3 id="etcaliases">/etc/aliases</h3>
+<pre><code>mailer-daemon: postmaster
+postmaster: root
+root: TU_EMAIL
+logcheck: root
+nobody: root
+hostmaster: root
+usenet: root
+news: root
+webmaster: root
+www: root
+ftp: root
+abuse: root
+noc: root
+security: root
+</code></pre>
+<p>Activamos los nuevos alias y reiniciamos servidor postfix.</p>
+<pre><code>sudo newaliases
+sudo systemctl restart postfix
+</code></pre>
+<h3 id="enviar-correo">Enviar correo.</h3>
+<pre><code>sudo apt-get install mpack
+echo "Test" &gt; /tmp/test.txt
+mpack -s 'test' /tmp/test.txt tu@email.com
+</code></pre>
+<h2 id="logcheck">logcheck</h2>
+<p>sudo apt install logcheck</p>
+<h3 id="configuracion-de-logcheck">Configuración de logcheck</h3>
+<p><code>sudo vim /etc/logcheck/logcheck.conf</code></p>
+<p>Modificamos:</p>
+<pre><code>SENDMAILTO=&quot;TU_EMAIL&quot;
+MAILASATTACH=1
+</code></pre>
+<p>Editamos el fichero /etc/logcheck/ignore.d.server/custom</p>
+<p>Aunque se puede poner el nombre que se quiera.</p>
+<pre><code>.*.from\ 251.red-79-157-159.dynamicip.rima-tde.net*
+.*Synchronized\ to\ time\ server*
+.*.\[UFW\ BLOCK\]*
+.*filtering\ via\ arp/ip/ip6tables\ is\ no\ longer\ available*
+.*Initializing\ XFRM\ netlink\ socket*
+.*Netfilter\ messages\ via\ NETLINK*
+.*ctnetlink\ v0.93:\ registering\ with\ nfnetlink.*
+.*systemd-udevd*
+.*networkd-dispatcher*
+.*systemd-networkd*
+.*IPv6:*
+.*Link\ UP*
+.*entered\ promiscuous\ mode*
+.*entered\ blocking\ state*
+.*can\ be\ used\ to\ set\ a\ preferred\ IP\ address*
+.*Network\ configuration\ changed*
+.*docker0*
+.*eth0*
+.*snapd*
+.*containerd*
+.*ovpn-server.*peer\ info*
+.*ovpn-server.*VERIFY\ OK*
+.*ovpn-server.*Initial\ packet*
+.*ovpn-server.*Connection\ Initiated*
+.*ovpn-server.*Control\ Channel*
+</code></pre>
+<p><code>.*.from\ 251.red-79-157-159.dynamicip.rima-tde.net*</code></p>
+<p>Evitamos que nos avise ya que se trata de nuestros clientes de nextcloud intentando conectar cuando esta el ordenador de casa apagado.</p>
+<p><code>.*.Synchronized\ to\ time\ server*.ntp.ubuntu.com*</code></p>
+<p>Servidor actualizando la hora del sistema.</p>
+<p><code>.*.\[UFW\ BLOCK\]*</code></p>
+<p>Ips bloqueadas, son demasiadas.</p>
+<h3 id="probamos-la-salida">Probamos la salida:</h3>
+<p><code>sudo -u logcheck logcheck -o -t</code></p>
+<p>Referencias:</p>
+<p>• http://somebooks.es/recibir-informes-sobre-sucesos-de-ubuntu-server-18-04-lts-con-logcheck/</p>
+<h2 id="actualizaciones-de-seguridad-automaticas">Actualizaciones de seguridad automáticas</h2>
+<p><code>sudo dpkg-reconfigure --priority=low unattended-upgrades</code></p>
+<p>Referencias:</p>
+<p>• https://help.ubuntu.com/community/AutomaticSecurityUpdates</p>
+<h2 id="cortafuegos">Cortafuegos</h2>
+<pre><code>sudo apt install ufw
+
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow [SSH PORT]
+sudo ufw disable &amp;&amp; sudo ufw enable
+</code></pre>
+<h3 id="status">Status</h3>
+<pre><code>sudo ufw status
+</code></pre>
+<pre><code>Status: active
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW       Anywhere
+443                        ALLOW       Anywhere
+22/tcp                     ALLOW       Anywhere
+80/tcp (v6)                ALLOW       Anywhere (v6)
+443 (v6)                   ALLOW       Anywhere (v6)
+22/tcp (v6)                ALLOW       Anywhere (v6)
+</code></pre>
+<h3 id="ver-reglas-del-cortafuegos">Ver reglas del cortafuegos:</h3>
+<p><code>sudo iptables -L -n --line-numbers</code></p>
+<h3 id="ver-ips-bloqueadas">Ver IPs bloqueadas:</h3>
+<p><code>sudo iptables -L -n --line-numbers | grep REJECT</code></p>
+<h2 id="fail2ban">fail2ban</h2>
+<p>Evitar accesos no autorizados al servidor.</p>
+<p><code>sudo apt-get install fail2ban</code></p>
+<p>Copiamos configuración por defecto a fichero personalizado.</p>
+<p><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code></p>
+<p>Editar configuración:</p>
+<p><code>sudo vim /etc/fail2ban/jail.local</code></p>
+<p>Podemos añadir una lista de IPs para que sean ignoradas:</p>
+<pre><code>ignoreip = 127.0.0.1/8 ::1
+</code></pre>
+<p>Añadimos reglas para los wordpress:</p>
+<pre><code>[ssh]
+enabled  = true
+port     = ssh
+filter   = sshd
+logpath  = /var/log/auth.log
+maxretry = 3
+bantime  = 1h
+
+[wordpress]
+enabled  = true
+filter   = wordpress
+logpath  = /var/log/nginx/*.log
+port     = 80,443
+bantime  = 1h
+</code></pre>
+<p>Creamos fichero /etc/fail2ban/filter.d/wordpress.conf y añadimos:</p>
+<pre><code># Fail2Ban filter for WordPress
+[Definition]
+failregex =  - - \[(\d{2})/\w{3}/\d{4}:\1:\1:\1 -\d{4}\] "POST /wp-login.php HTTP/1.1" 200
+ignoreregex =
+</code></pre>
+<p>Reiniciamos:</p>
+<p><code>sudo systemctl restart fail2ban</code></p>
+<p>Ver estado:</p>
+<pre><code>$ sudo fail2ban-client status
+
+Status
+|- Number of jail:  3
+`- Jail list:   ssh, sshd, wordpress
+
+$ sudo fail2ban-client status ssh
+Status for the jail: ssh
+|- Filter
+|  |- Currently failed: 3
+|  |- Total failed: 11
+|  `- File list:    /var/log/auth.log
+`- Actions
+   |- Currently banned: 5
+   |- Total banned: 6
+   `- Banned IP list:   104.248.176.46 106.12.125.140 163.172.166.223 37.187.181.182 51.68.89.100
+</code></pre>
+<p>Desde systemd:</p>
+<pre><code>sudo systemctl status fail2ban
+</code></pre>
+<h3 id="consultar-logs-de-fail2ban">Consultar logs de fail2ban</h3>
+<p>Número de veces que han sido bloqueada las IPs:</p>
+<p><code>zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c</code></p>
+<h3 id="referencias">Referencias:</h3>
+<ul>
+<li>https://raiolanetworks.es/blog/bloquear-ataques-dos-con-fail2ban-en-linux/</li>
+<li>https://geekland.eu/como-consultar-logs-de-fail2ban/</li>
+</ul>
+<h2 id="varios">Varios</h2>
+<h3 id="lynis">Lynis</h3>
+<p>Lynis nos genera un informe muy completo sobre el estado de nuestro servidor y
+nos da sugerencias.</p>
+<pre><code>sudo apt-get install lynis
+
+sodo lynis audit system
+</code></pre>
+<h3 id="chkrootkit">chkrootkit</h3>
+<p>Permite localizar rootkits.</p>
+<pre><code>sudo apt install chkrootkit
+
+sudo chkrootkit
+</code></pre>
+<h3 id="clamav">Clamav</h3>
+<pre><code>sudo apt install clamav clamav-daemon clamav-freshclam clamdscan
+</code></pre>
+<p>Actualizar base d datos de virus.</p>
+<pre><code>sudo freshclam
+</code></pre>
+<p>Evitar que arranque al inicio.</p>
+<pre><code>sudo systemctl disable clamav-freshclam.service
+</code></pre>
+<h3 id="scripts">Scripts</h3>
+<p>He realizado unos pequeños scripts para tener una visión del estado
+del servidor de forma rápida.</p>
+<h4 id="instalar">Instalar</h4>
+<pre><code>git clone https://github.com/edumag/magscripts
+</code></pre>
+<p>Los scripts están separados por temas así que es fácil eliminar los que no te interesan o añadir otros.</p>
+<p>Instalar dependencias:</p>
+<pre><code>sudo apt-get install chkrootkit clamscan docker
+</code></pre>
+<h4 id="ejecutar">Ejecutar</h4>
+<pre><code>cd magscripts/servidor
+sudo ./magReportServer
+</code></pre>
+<h4 id="envio-del-informe">Envío del informe.</h4>
+<pre><code>sudo ./magReportServer &gt; /tmp/report.txt &amp;&amp; mpack -s repor /tmp/report.txt  TU_EMAIL
 </code></pre>
 
 
@@ -2450,7 +3130,7 @@ sudo chmod -R 775 $DIR_PROYECTO/storage
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../Markdown-pandoc-varios/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Trucos de pandoc para exportar markdown" rel="prev">
+          <a href="../Ubuntu-server-18.04-Afinando/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Afinando ubuntu server 18.04" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2460,20 +3140,20 @@ sudo chmod -R 775 $DIR_PROYECTO/storage
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Trucos de pandoc para exportar markdown
+                Afinando ubuntu server 18.04
               </div>
             </div>
           </a>
         
         
           
-          <a href="../clean/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Clean" rel="next">
+          <a href="../odoo/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Odoo" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Clean
+                Odoo
               </div>
             </div>
             <div class="md-footer__button md-icon">
