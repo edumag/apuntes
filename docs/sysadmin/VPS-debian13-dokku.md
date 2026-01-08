@@ -1,4 +1,8 @@
-# Preparar servidor VPS Debian 13
+# Instalación de dokku en VPS Debian 13
+
+Dokku convierte un servidor Linux en una especie de plataforma para desplegar aplicaciones, similar a servicios comerciales como Heroku, pero sin costos recurrentes ni dependencia de terceros.
+
+## Preparar servidor VPS Debian 13
 
 Post instalación de servidor linux debian 13, y configuración de seguridad.
 
@@ -79,13 +83,49 @@ previamente la llave ssh en tu ordenador y añadida al servidor.
     AllowUsers USER1 USER2    # Lista de usuarios que si pueden entrar.
     PasswordAuthentication no # Solo permitimos entrar con clave ssh.
 
+## Actualizaciones de seguridad automáticas
+
+    sudo dpkg-reconfigure --priority=low unattended-upgrades
+
+## Cortafuegos
+
+    sudo apt install ufw
+
+    sudo ufw allow http
+    sudo ufw allow https
+    sudo ufw allow [SSH PORT]
+    sudo ufw disable && sudo ufw enable
+
+### Status
+
+    sudo ufw status
+
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW       Anywhere
+443                        ALLOW       Anywhere
+22/tcp                     ALLOW       Anywhere
+80/tcp (v6)                ALLOW       Anywhere (v6)
+443 (v6)                   ALLOW       Anywhere (v6)
+22/tcp (v6)                ALLOW       Anywhere (v6)
+```
+
+### Ver reglas del cortafuegos:
+
+`sudo iptables -L -n --line-numbers`
+
+### Ver IPs bloqueadas:
+
+`sudo iptables -L -n --line-numbers | grep REJECT`
+
 ## Servidor de correo
 
     sudo apt install postfix
 
 Seleccionamos "Internet site"
-
-y ponemos el nombre del servidor smtp.
 
 ### Configuración de postfix
 
@@ -125,7 +165,7 @@ sudo systemctl restart postfix
 
     sudo apt-get install mpack
     echo "Test" > /tmp/test.txt
-    mpack -s 'test' /tmp/test.txt tu@email.com
+    mpack -s 'test' /tmp/test.txt TU_EMAIL
 
 ## logcheck
 
@@ -133,7 +173,7 @@ sudo apt install logcheck
 
 ### Configuración de logcheck
 
-`sudo vim /etc/logcheck/logcheck.conf`
+    sudo vim /etc/logcheck/logcheck.conf
 
 Modificamos:
 
@@ -174,83 +214,31 @@ Aunque se puede poner el nombre que se quiera.
 .*ovpn-server.*Control\ Channel*
 ```
 
+### Herramienta en línea para generar normas en ignore
 
-`.*.from\ 251.red-79-157-159.dynamicip.rima-tde.net*`
-
-Evitamos que nos avise ya que se trata de nuestros clientes de nextcloud intentando conectar cuando esta el ordenador de casa apagado.
-
-`.*.Synchronized\ to\ time\ server*.ntp.ubuntu.com*`
-
-Servidor actualizando la hora del sistema.
-
-`.*.\[UFW\ BLOCK\]*`
-
-Ips bloqueadas, son demasiadas.
-
+    https://nyman.re/logcheck-helper/
 
 ### Probamos la salida:
 
-`sudo -u logcheck logcheck -o -t`
+    sudo -u logcheck logcheck -o -t
 
 Referencias:
 
 • http://somebooks.es/recibir-informes-sobre-sucesos-de-ubuntu-server-18-04-lts-con-logcheck/
 
-## Actualizaciones de seguridad automáticas
-
-`sudo dpkg-reconfigure --priority=low unattended-upgrades`
-
-Referencias:
-
-• https://help.ubuntu.com/community/AutomaticSecurityUpdates
-
-## Cortafuegos
-
-    sudo apt install ufw
-
-    sudo ufw allow http
-    sudo ufw allow https
-    sudo ufw allow [SSH PORT]
-    sudo ufw disable && sudo ufw enable
-
-### Status
-
-    sudo ufw status
-
-```
-Status: active
-
-To                         Action      From
---                         ------      ----
-80/tcp                     ALLOW       Anywhere
-443                        ALLOW       Anywhere
-22/tcp                     ALLOW       Anywhere
-80/tcp (v6)                ALLOW       Anywhere (v6)
-443 (v6)                   ALLOW       Anywhere (v6)
-22/tcp (v6)                ALLOW       Anywhere (v6)
-```
-
-### Ver reglas del cortafuegos:
-
-`sudo iptables -L -n --line-numbers`
-
-### Ver IPs bloqueadas:
-
-`sudo iptables -L -n --line-numbers | grep REJECT`
-
 ## fail2ban
 
 Evitar accesos no autorizados al servidor.
 
-`sudo apt-get install fail2ban`
+    sudo apt-get install fail2ban
 
 Copiamos configuración por defecto a fichero personalizado.
 
-`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`
+    sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
 Editar configuración:
 
-`sudo vim /etc/fail2ban/jail.local`
+    sudo vim /etc/fail2ban/jail.local
 
 Podemos añadir una lista de IPs para que sean ignoradas:
 
@@ -282,7 +270,7 @@ Creamos fichero /etc/fail2ban/filter.d/wordpress.conf y añadimos:
 
 Reiniciamos:
 
-`sudo systemctl restart fail2ban`
+    sudo systemctl restart fail2ban
 
 Ver estado:
 
@@ -313,7 +301,7 @@ Desde systemd:
 
 Número de veces que han sido bloqueada las IPs:
 
-`zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c`
+    zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c
 
 ### Referencias:
 
@@ -331,13 +319,13 @@ nos da sugerencias.
 
     sodo lynis audit system
 
-### chkrootkit
+### rkhunter
 
 Permite localizar rootkits.
 
-    sudo apt install chkrootkit
+    sudo apt install rkhunter
 
-    sudo chkrootkit
+    sudo rkhunter --check
 
 ### Clamav
 
@@ -353,8 +341,7 @@ Evitar que arranque al inicio.
 
 ### Scripts
 
-He realizado unos pequeños scripts para tener una visión del estado
-del servidor de forma rápida.
+He realizado unos pequeños scripts para tener una visión del estado del servidor de forma rápida.
 
 #### Instalar
 
@@ -364,7 +351,7 @@ Los scripts están separados por temas así que es fácil eliminar los que no te
 
 Instalar dependencias:
 
-    sudo apt-get install chkrootkit clamscan docker
+    sudo apt-get install chkrootkit clamscan docker lynis
 
 #### Ejecutar
 
@@ -375,3 +362,24 @@ Instalar dependencias:
 
     sudo ./magReportServer > /tmp/report.txt && mpack -s repor /tmp/report.txt  TU_EMAIL
 
+## Dokku
+
+### Instalación
+
+Siguiendo los pasos de la documentación oficial.
+
+Esto proceso variará según la versión actual.
+
+```
+# for debian systems, installs Dokku via apt-get
+wget -NP . https://dokku.com/install/v0.37.3/bootstrap.sh
+sudo DOKKU_TAG=v0.37.3 bash bootstrap.sh
+```
+
+Añadimos la clave del usuario debian a la clave de administrador de dokku.
+
+    cat ~/.ssh/authorized_keys | sudo dokku ssh-keys:add admin
+
+Puedes usar cualquier dominio al que ya tengas acceso, este dominio debe tener un registro A o CNAME que apunte a la IP de tu servidor.
+
+    dokku domains:set-global TU_DOMINIO
