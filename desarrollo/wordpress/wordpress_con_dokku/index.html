@@ -1472,20 +1472,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vps" class="md-nav__link">
-    VPS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion" class="md-nav__link">
-    Instalación
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#instalacion-wordpress" class="md-nav__link">
     Instalación wordpress
   </a>
@@ -1585,13 +1571,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    Referencias:
-  </a>
   
 </li>
         
@@ -2155,11 +2134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/VPS-debian13/" class="md-nav__link">
+      <a href="../../../sysadmin/VPS-debian13-dokku/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Preparar servidor VPS Debian 13
+    Instalación de dokku en VPS Debian 13
   </span>
   
 
@@ -2423,20 +2402,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vps" class="md-nav__link">
-    VPS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion" class="md-nav__link">
-    Instalación
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#instalacion-wordpress" class="md-nav__link">
     Instalación wordpress
   </a>
@@ -2539,13 +2504,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    Referencias:
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2567,55 +2525,32 @@
 
 
 <h1 id="wordpress-con-dokku">Wordpress con dokku</h1>
-<p><strong>Actualización</strong>: abril del 2020</p>
-<h2 id="vps">VPS</h2>
-<p>Contratamos maquina virtual con OVH.</p>
-<p>Al entrar nos muestra mensaje de error:</p>
-<pre><code>warning: setlocale: LC_ALL: cannot change locale (es_ES.UTF-8)
-</code></pre>
-<p>Entramos por ssh y configuramos locales.</p>
-<pre><code>sudo dpkg-reconfigure locales
-</code></pre>
-<p>Configuramos los DNS para que nuestro dominio apunte al servidor.</p>
-<p>Tipo A, Host: @, TUIP, TTL: 900
-Tipo A, Subdominios: *</p>
-<h2 id="instalacion">Instalación</h2>
-<p>Seguimos documentación de <a href="http://dokku.viewdocs.io/dokku/">dokku</a> </p>
-<pre><code>wget https://raw.githubusercontent.com/dokku/dokku/v0.17.9/bootstrap.sh
-sudo DOKKU_TAG=v0.17.9 bash bootstrap.sh
-</code></pre>
-<p>http://IP_DE_LA_MAQUINA</p>
-<p>Copiamos nuestra clave pública desde nuestro local en .ssh/id_rsa.pub en el formulario y guardamos.</p>
-<p>Dokku instalado!!!!</p>
+<p><strong>Actualización</strong>: Enero, 2026</p>
 <h2 id="instalacion-wordpress">Instalación wordpress</h2>
 <h3 id="desde-maquina-virtual">Desde maquina virtual</h3>
 <pre><code>sudo dokku plugin:install https://github.com/dokku/dokku-mysql.git mysql
 sudo dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
 
-dokku apps:create TUDOMINIO
-dokku domains:add TUDOMINIO TUDOMINIO.com
-dokku domains:add TUDOMINIO www.TUDOMINIO.com
-dokku mysql:create gmdb
+dokku apps:create $TU_APLICACION
+dokku domains:add $TU_APLICACION $TU_DOMINIO
+dokku domains:add $TU_APLICACION www.$TU_DOMINIO
+dokku mysql:create $TU_BASE_DE_DATOS
 </code></pre>
 <p>Creamos volúmenes:</p>
-<pre><code>sudo mkdir -p /var/lib/dokku/data/storage/TUDOMINIO/uploads
+<pre><code>sudo mkdir -p /var/lib/dokku/data/storage/$TU_APLICACION/uploads
 
-sudo chmod -R 755 /var/lib/dokku/data/storage/
+sudo chmod -R 755 /var/lib/dokku/data/storage/$TU_APLICACION
 
-dokku storage:mount TUDOMINIO /var/lib/dokku/data/storage/TUDOMINIO/uploads/:/app/wp-content/uploads/
+
+dokku storage:mount $TU_APLICACION /var/lib/dokku/data/storage/$TU_APLICACION/uploads/:/app/wp-content/uploads/
 </code></pre>
 <h4 id="conexion-con-base-de-datos-en-dokku">Conexión con base de datos en dokku</h4>
-<pre><code>dokku mysql:link gmdb TUDOMINIO
+<pre><code>dokku mysql:link $TU_BASE_DE_DATOS $TU_APLICACION
 </code></pre>
-<p>Creado el enlace entre la aplicación y el servicio de la base de datos,
-tendremos en el fichero /home/dokku/TUDOMINIO/ENV de la aplicación la información para conectar con
-ella en forma de variable de entorno que aprovecharemos más adelante para
-recoger y conectar con la base de datos.</p>
+<p>Creado el enlace entre la aplicación y el servicio de la base de datos, tendremos en el fichero /home/dokku/$TU_APLICACION/ENV de la aplicación la información para conectar con ella en forma de variable de entorno que aprovecharemos más adelante para recoger y conectar con la base de datos.</p>
 <h3 id="desde-local">Desde local</h3>
 <p>Debemos tener una instancia de wordpress en local.</p>
-<p>Para ello puedes ver el post <a href="http://lesolivex.com/wordpress-en-local-con-docker/">Wordpress en local don docker</a></p>
-<p>Nos situamos en la carpeta donde tenemos nuestro wordpress local, en mi caso la
-carpeta html  y creamos .gitignore con el siguiente contenido:</p>
+<p>Nos situamos en la carpeta donde tenemos nuestro wordpress local y creamos .gitignore con el siguiente contenido:</p>
 <pre><code>.heroku/
 .profile.d/
 .composer/
@@ -2642,14 +2577,14 @@ secret/
 .magtrabajos
 </code></pre>
 <p>Nota</p>
-<p>: En caso de tener problemas de permisos con la carpeta local de wordpress
-podeis ejecutar el siguiente comando: sudo chown -R www-data:$USER html/</p>
+<p>: En caso de tener problemas de permisos con la carpeta local de wordpress podéis ejecutar el siguiente comando: sudo chown -R www-data:$USER ./</p>
 <p>Creamos compser.json:</p>
 <pre><code>{
   &quot;require&quot;: {
-    &quot;php&quot;: &quot;~7&quot;,
+    &quot;php&quot;: &quot;~8&quot;,
     &quot;ext-mbstring&quot; : &quot;*&quot;,
-    &quot;ext-gd&quot;: &quot;*&quot;
+    &quot;ext-gd&quot;: &quot;*&quot;,
+    &quot;ext-exif&quot;: &quot;*&quot;
   },
   &quot;scripts&quot;: {
     &quot;post-install-cmd&quot;: [
@@ -2659,51 +2594,51 @@ podeis ejecutar el siguiente comando: sudo chown -R www-data:$USER html/</p>
 }
 </code></pre>
 <p>Creamos fichero nginx_app.conf:</p>
-<pre><code># WordPress permalinks                                                          
-location / {                                                                    
-  index index.php index.html;                                                   
-  try_files $uri $uri/ /index.php?$args;                                        
-}  
+<pre><code># WordPress permalinks
+location / {
+  index index.php index.html;
+  try_files $uri $uri/ /index.php?$args;
+}
 
-# Add trailing slash to */wp-admin requests.                                    
-rewrite /wp-admin$ $scheme://$host$uri/ permanent;                              
+# Add trailing slash to */wp-admin requests.
+rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 
-# Deny access to any files with a .php extension in the uploads directory       
-# Works in sub-directory installs and also in multisite network                 
-location ~* /(?:uploads|files)/.*.php$ {                                        
-  deny all;                                                                     
-}                                                                               
+# Deny access to any files with a .php extension in the uploads directory
+# Works in sub-directory installs and also in multisite network
+location ~* /(?:uploads|files)/.*.php$ {
+  deny all;
+}
 
-#upload                                                                         
-client_max_body_size 100M;                                                      
+#upload
+client_max_body_size 100M;
 
-#jetpack connection                                                             
-fastcgi_buffers 8 32k;                                                          
-fastcgi_buffer_size 64k;                                                        
-proxy_buffer_size 128k;                                                         
-proxy_buffers 4 256k;                                                           
-proxy_busy_buffers_size 256k;                                                   
+#jetpack connection
+fastcgi_buffers 8 32k;
+fastcgi_buffer_size 64k;
+proxy_buffer_size 128k;
+proxy_buffers 4 256k;
+proxy_busy_buffers_size 256k;
 proxy_read_timeout 300;
 
-# enable gzip compression                                                       
-gzip on;                                                                        
-# Minimum file size in bytes (really small files aren’t worth compressing)      
-gzip_min_length 1000;                                                           
-# Compression level, 1-9                                                        
-gzip_comp_level 2;                                                              
-gzip_buffers 4 32k;                                                             
-gzip_types text/plain application/javascript text/xml text/css image/svg+xml;   
-# Insert `Vary: Accept-Encoding` header, as specified in HTTP1.1 protocol       
-gzip_vary on;                                                                   
-# end gzip configuration                                                        
+# enable gzip compression
+gzip on;
+# Minimum file size in bytes (really small files aren’t worth compressing)
+gzip_min_length 1000;
+# Compression level, 1-9
+gzip_comp_level 2;
+gzip_buffers 4 32k;
+gzip_types text/plain application/javascript text/xml text/css image/svg+xml;
+# Insert `Vary: Accept-Encoding` header, as specified in HTTP1.1 protocol
+gzip_vary on;
+# end gzip configuration
 
-# Set time to expire for headers on assets                                      
-location ~* .(js|css|png|jpg|jpeg|gif|ico|svg)$ {                               
-  expires 1y;                                                                   
-}                                                                               
+# Set time to expire for headers on assets
+location ~* .(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+  expires 1y;
+}
 
-# Sitemap url, for WordPress SEO plugin                                         
-#rewrite ^/sitemap_index.xml$ /index.php?sitemap=1 last;                        
+# Sitemap url, for WordPress SEO plugin
+#rewrite ^/sitemap_index.xml$ /index.php?sitemap=1 last;
 #rewrite ^/([^/]+?)-sitemap([0-9]+)?.xml$ /index.php?sitemap=$1&amp;sitemap_n=$2 last;
 
 # Global restrictions configuration file.
@@ -2753,7 +2688,7 @@ post_max_size = 50M
 </code></pre>
 <p>Iniciamos git y añadimos repositorio de dokku y subimos proyecto.</p>
 <pre><code>git init
-git remote add dokku dokku@TUDOMINIO.com:TUDOMINIO
+git remote add dokku dokku@$TU_APLICACION:$TU_DOMINIO
 git add .
 git commit -am 'Init'
 git push dokku master
@@ -2874,11 +2809,8 @@ if ( !defined('ABSPATH') )
 require_once(ABSPATH . 'wp-settings.php');
 </code></pre>
 <h3 id="desde-la-web">Desde la web</h3>
-<p>http://TUDOMINIO.com</p>
+<p>http://$TU_DOMINIO</p>
 <p>Y ya podemos hacer la configuración desde el dominio.</p>
-<p>Ahora nos faltará como gestionar los cambios que hagamos en local
-sobre nuestro tema personalizado o nuestros plugins ya que la idea
-es que wordpress se actualice por si solo desde el servidor.</p>
 <h2 id="configurar-los-keys-y-salts-de-seguridad">Configurar los keys y salts de seguridad</h2>
 <p>Vamos a https://api.wordpress.org/secret-key/1.1/salt/ para generar las claves.</p>
 <p>Y las añadimos a la configuración del proyecto.</p>
@@ -2892,59 +2824,35 @@ dokku config:set wp LOGGED_IN_SALT='...your key...'
 dokku config:set wp NONCE_SALT='...your key...'
 </code></pre>
 <h4 id="letsencrypt">Letsencrypt.</h4>
-<pre><code>dokku config:set --no-restart TUDOMINIO DOKKU_LETSENCRYPT_EMAIL=TUCORREO@TUCORREO.com
-dokku letsencrypt TUDOMINIO
+<pre><code>dokku letsencrypt:set $TU_APLICACION email $TU_EMAIL
+dokku letsencrypt:enable $TU_APLICACION
 dokku letsencrypt:auto-renew
 dokku letsencrypt:cron-job --add
 </code></pre>
 <h3 id="varios">Varios</h3>
 <h4 id="importacion-de-la-base-de-datos">Importación de la base de datos.</h4>
-<p>En caso de querer importar nuestra base de datos local dokku.</p>
-<p>Podemos crear nuestra copia de la base de datos desde adminer.</p>
-<p>Subimos el fichero al servidor y ejecutamos:</p>
-<pre><code>cat wordpress.sql | ssh dokku@TUDOMINIO.com mysql:import gmdb &lt; .
+<p>En caso de querer importar la base de datos a dokku.</p>
+<pre><code>cat wordpress.sql | ssh dokku@$TU_DOMINIO mysql:import $TU_BASE_DE_DATOS &lt; .
 </code></pre>
-<blockquote>
-<p><strong>Nota:</strong> Tener en cuenta que será necesario cambiar las urls del fichero
-antes de importar. Ejemplo: localhost:8002 por TUDOMINIO</p>
-</blockquote>
 <h4 id="entrar-a-una-consola-de-un-container">Entrar a una consola de un container:</h4>
 <pre><code>dokku run APLICACION bash
 </code></pre>
 <h4 id="lanzar-comandos-de-dokku-desde-local">Lanzar comandos de dokku desde local:</h4>
-<pre><code>ssh dokku@TUDOMINIO.com help
+<pre><code>ssh dokku@$TU_DOMINIO help
 </code></pre>
 <h4 id="logs">Logs.</h4>
 <p>Errores desde dokku:</p>
-<pre><code>ssh dokku@lesolivex.com dokku logs:failed menjut
+<pre><code>ssh dokku@$TU_DOMINIO dokku logs:failed $TU_APLICACION
 </code></pre>
 <p>Logs de acceso:</p>
-<pre><code>ssh dokku@lesolivex.com dokku logs menjut -t
+<pre><code>ssh dokku@$TU_DOMINIO dokku logs $TU_APLICACION -t
 </code></pre>
 <p>Errores en nginx:</p>
-<pre><code>ssh dokku@lesolivex.com nginx:error-logs menjut -t
+<pre><code>ssh dokku@$TU_DOMINIO nginx:error-logs $TU_APLICACION -t
 </code></pre>
 <p>Log de mysql:</p>
-<pre><code>ssh dokku@lesolivex.com mysql:logs menjutdb -t
+<pre><code>ssh dokku@$TU_DOMINIO mysql:logs $TU_BASE_DE_DATOS -t
 </code></pre>
-<h3 id="referencias">Referencias:</h3>
-<ul>
-<li>
-<p><a href="https://playcode.org/setup-wordpress-blog-digitalocean-using-dokku/">playcode, Worpress digitalocean dokku</a></p>
-</li>
-<li>
-<p><a href="https://github.com/dokku-community/dokku-wordpress">Comunidad dokku</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/watch?v=fAEO8nLHXP://www.youtube.com/watch?v=fAEO8nLHXPI">Vídeo tutorías completo</a></p>
-</li>
-<li>
-<p><a href="https://www.sysrun.io/2015/11/03/installing-wordpress-on-dokku/">sysrun, instalando wordpress sobre dokku</a></p>
-</li>
-<li>
-<p><a href="https://blog.enjambrelab.com.ar/https-en-dokku-con-lets-encrypt/">Letsencrypt con dokku</a></p>
-</li>
-</ul>
 
 
 

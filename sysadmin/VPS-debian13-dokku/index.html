@@ -12,7 +12,7 @@
         <meta name="author" content="Eduardo Magrané">
       
       
-        <link rel="canonical" href="https://lesolivex.com/apuntes/sysadmin/VPS-debian13/">
+        <link rel="canonical" href="https://lesolivex.com/apuntes/sysadmin/VPS-debian13-dokku/">
       
       
         <link rel="prev" href="../Ubuntu-server-18.04-Afinando/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Preparar servidor VPS Debian 13 - Apuntes</title>
+        <title>Instalación de dokku en VPS Debian 13 - Apuntes</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#preparar-servidor-vps-debian-13" class="md-skip">
+        <a href="#instalacion-de-dokku-en-vps-debian-13" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Preparar servidor VPS Debian 13
+              Instalación de dokku en VPS Debian 13
             
           </span>
         </div>
@@ -1997,7 +1997,7 @@
           
   
   <span class="md-ellipsis">
-    Preparar servidor VPS Debian 13
+    Instalación de dokku en VPS Debian 13
   </span>
   
 
@@ -2008,7 +2008,7 @@
         
   
   <span class="md-ellipsis">
-    Preparar servidor VPS Debian 13
+    Instalación de dokku en VPS Debian 13
   </span>
   
 
@@ -2028,6 +2028,13 @@
       Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparar-servidor-vps-debian-13" class="md-nav__link">
+    Preparar servidor VPS Debian 13
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#actualizar" class="md-nav__link">
@@ -2075,6 +2082,47 @@
           <li class="md-nav__item">
   <a href="#sshd_config" class="md-nav__link">
     sshd_config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
+    Actualizaciones de seguridad automáticas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cortafuegos" class="md-nav__link">
+    Cortafuegos
+  </a>
+  
+    <nav class="md-nav" aria-label="Cortafuegos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
+    Ver reglas del cortafuegos:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-ips-bloqueadas" class="md-nav__link">
+    Ver IPs bloqueadas:
   </a>
   
 </li>
@@ -2141,49 +2189,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#herramienta-en-linea-para-generar-normas-en-ignore" class="md-nav__link">
+    Herramienta en línea para generar normas en ignore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#probamos-la-salida" class="md-nav__link">
     Probamos la salida:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
-    Actualizaciones de seguridad automáticas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cortafuegos" class="md-nav__link">
-    Cortafuegos
-  </a>
-  
-    <nav class="md-nav" aria-label="Cortafuegos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
-    Ver reglas del cortafuegos:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-ips-bloqueadas" class="md-nav__link">
-    Ver IPs bloqueadas:
   </a>
   
 </li>
@@ -2236,8 +2250,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chkrootkit" class="md-nav__link">
-    chkrootkit
+  <a href="#rkhunter" class="md-nav__link">
+    rkhunter
   </a>
   
 </li>
@@ -2280,6 +2294,26 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dokku" class="md-nav__link">
+    Dokku
+  </a>
+  
+    <nav class="md-nav" aria-label="Dokku">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
   
 </li>
         
@@ -2551,6 +2585,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preparar-servidor-vps-debian-13" class="md-nav__link">
+    Preparar servidor VPS Debian 13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#actualizar" class="md-nav__link">
     Actualizar
   </a>
@@ -2596,6 +2637,47 @@
           <li class="md-nav__item">
   <a href="#sshd_config" class="md-nav__link">
     sshd_config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
+    Actualizaciones de seguridad automáticas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cortafuegos" class="md-nav__link">
+    Cortafuegos
+  </a>
+  
+    <nav class="md-nav" aria-label="Cortafuegos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
+    Ver reglas del cortafuegos:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-ips-bloqueadas" class="md-nav__link">
+    Ver IPs bloqueadas:
   </a>
   
 </li>
@@ -2662,49 +2744,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#herramienta-en-linea-para-generar-normas-en-ignore" class="md-nav__link">
+    Herramienta en línea para generar normas en ignore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#probamos-la-salida" class="md-nav__link">
     Probamos la salida:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actualizaciones-de-seguridad-automaticas" class="md-nav__link">
-    Actualizaciones de seguridad automáticas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cortafuegos" class="md-nav__link">
-    Cortafuegos
-  </a>
-  
-    <nav class="md-nav" aria-label="Cortafuegos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-reglas-del-cortafuegos" class="md-nav__link">
-    Ver reglas del cortafuegos:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-ips-bloqueadas" class="md-nav__link">
-    Ver IPs bloqueadas:
   </a>
   
 </li>
@@ -2757,8 +2805,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chkrootkit" class="md-nav__link">
-    chkrootkit
+  <a href="#rkhunter" class="md-nav__link">
+    rkhunter
   </a>
   
 </li>
@@ -2809,6 +2857,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dokku" class="md-nav__link">
+    Dokku
+  </a>
+  
+    <nav class="md-nav" aria-label="Dokku">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2824,7 +2892,9 @@
                   
 
 
-<h1 id="preparar-servidor-vps-debian-13">Preparar servidor VPS Debian 13</h1>
+<h1 id="instalacion-de-dokku-en-vps-debian-13">Instalación de dokku en VPS Debian 13</h1>
+<p>Dokku convierte un servidor Linux en una especie de plataforma para desplegar aplicaciones, similar a servicios comerciales como Heroku, pero sin costos recurrentes ni dependencia de terceros.</p>
+<h2 id="preparar-servidor-vps-debian-13">Preparar servidor VPS Debian 13</h2>
 <p>Post instalación de servidor linux debian 13, y configuración de seguridad.</p>
 <pre><code class="language-bash">$ fastfetch
         _,met$$$$$gg.          debian@vps-58a7ea55
@@ -2888,11 +2958,39 @@ previamente la llave ssh en tu ordenador y añadida al servidor.</p>
 AllowUsers USER1 USER2    # Lista de usuarios que si pueden entrar.
 PasswordAuthentication no # Solo permitimos entrar con clave ssh.
 </code></pre>
+<h2 id="actualizaciones-de-seguridad-automaticas">Actualizaciones de seguridad automáticas</h2>
+<pre><code>sudo dpkg-reconfigure --priority=low unattended-upgrades
+</code></pre>
+<h2 id="cortafuegos">Cortafuegos</h2>
+<pre><code>sudo apt install ufw
+
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow [SSH PORT]
+sudo ufw disable &amp;&amp; sudo ufw enable
+</code></pre>
+<h3 id="status">Status</h3>
+<pre><code>sudo ufw status
+</code></pre>
+<pre><code>Status: active
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW       Anywhere
+443                        ALLOW       Anywhere
+22/tcp                     ALLOW       Anywhere
+80/tcp (v6)                ALLOW       Anywhere (v6)
+443 (v6)                   ALLOW       Anywhere (v6)
+22/tcp (v6)                ALLOW       Anywhere (v6)
+</code></pre>
+<h3 id="ver-reglas-del-cortafuegos">Ver reglas del cortafuegos:</h3>
+<p><code>sudo iptables -L -n --line-numbers</code></p>
+<h3 id="ver-ips-bloqueadas">Ver IPs bloqueadas:</h3>
+<p><code>sudo iptables -L -n --line-numbers | grep REJECT</code></p>
 <h2 id="servidor-de-correo">Servidor de correo</h2>
 <pre><code>sudo apt install postfix
 </code></pre>
 <p>Seleccionamos "Internet site"</p>
-<p>y ponemos el nombre del servidor smtp.</p>
 <h3 id="configuracion-de-postfix">Configuración de postfix</h3>
 <p>Configuramos servidor de correo para poder recibir correos de aviso.</p>
 <h3 id="etcpostfixmaincf">/etc/postfix/main.cf</h3>
@@ -2922,12 +3020,13 @@ sudo systemctl restart postfix
 <h3 id="enviar-correo">Enviar correo.</h3>
 <pre><code>sudo apt-get install mpack
 echo "Test" &gt; /tmp/test.txt
-mpack -s 'test' /tmp/test.txt tu@email.com
+mpack -s 'test' /tmp/test.txt TU_EMAIL
 </code></pre>
 <h2 id="logcheck">logcheck</h2>
 <p>sudo apt install logcheck</p>
 <h3 id="configuracion-de-logcheck">Configuración de logcheck</h3>
-<p><code>sudo vim /etc/logcheck/logcheck.conf</code></p>
+<pre><code>sudo vim /etc/logcheck/logcheck.conf
+</code></pre>
 <p>Modificamos:</p>
 <pre><code>SENDMAILTO=&quot;TU_EMAIL&quot;
 MAILASATTACH=1
@@ -2960,53 +3059,24 @@ MAILASATTACH=1
 .*ovpn-server.*Connection\ Initiated*
 .*ovpn-server.*Control\ Channel*
 </code></pre>
-<p><code>.*.from\ 251.red-79-157-159.dynamicip.rima-tde.net*</code></p>
-<p>Evitamos que nos avise ya que se trata de nuestros clientes de nextcloud intentando conectar cuando esta el ordenador de casa apagado.</p>
-<p><code>.*.Synchronized\ to\ time\ server*.ntp.ubuntu.com*</code></p>
-<p>Servidor actualizando la hora del sistema.</p>
-<p><code>.*.\[UFW\ BLOCK\]*</code></p>
-<p>Ips bloqueadas, son demasiadas.</p>
+<h3 id="herramienta-en-linea-para-generar-normas-en-ignore">Herramienta en línea para generar normas en ignore</h3>
+<pre><code>https://nyman.re/logcheck-helper/
+</code></pre>
 <h3 id="probamos-la-salida">Probamos la salida:</h3>
-<p><code>sudo -u logcheck logcheck -o -t</code></p>
+<pre><code>sudo -u logcheck logcheck -o -t
+</code></pre>
 <p>Referencias:</p>
 <p>• http://somebooks.es/recibir-informes-sobre-sucesos-de-ubuntu-server-18-04-lts-con-logcheck/</p>
-<h2 id="actualizaciones-de-seguridad-automaticas">Actualizaciones de seguridad automáticas</h2>
-<p><code>sudo dpkg-reconfigure --priority=low unattended-upgrades</code></p>
-<p>Referencias:</p>
-<p>• https://help.ubuntu.com/community/AutomaticSecurityUpdates</p>
-<h2 id="cortafuegos">Cortafuegos</h2>
-<pre><code>sudo apt install ufw
-
-sudo ufw allow http
-sudo ufw allow https
-sudo ufw allow [SSH PORT]
-sudo ufw disable &amp;&amp; sudo ufw enable
-</code></pre>
-<h3 id="status">Status</h3>
-<pre><code>sudo ufw status
-</code></pre>
-<pre><code>Status: active
-
-To                         Action      From
---                         ------      ----
-80/tcp                     ALLOW       Anywhere
-443                        ALLOW       Anywhere
-22/tcp                     ALLOW       Anywhere
-80/tcp (v6)                ALLOW       Anywhere (v6)
-443 (v6)                   ALLOW       Anywhere (v6)
-22/tcp (v6)                ALLOW       Anywhere (v6)
-</code></pre>
-<h3 id="ver-reglas-del-cortafuegos">Ver reglas del cortafuegos:</h3>
-<p><code>sudo iptables -L -n --line-numbers</code></p>
-<h3 id="ver-ips-bloqueadas">Ver IPs bloqueadas:</h3>
-<p><code>sudo iptables -L -n --line-numbers | grep REJECT</code></p>
 <h2 id="fail2ban">fail2ban</h2>
 <p>Evitar accesos no autorizados al servidor.</p>
-<p><code>sudo apt-get install fail2ban</code></p>
+<pre><code>sudo apt-get install fail2ban
+</code></pre>
 <p>Copiamos configuración por defecto a fichero personalizado.</p>
-<p><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code></p>
+<pre><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+</code></pre>
 <p>Editar configuración:</p>
-<p><code>sudo vim /etc/fail2ban/jail.local</code></p>
+<pre><code>sudo vim /etc/fail2ban/jail.local
+</code></pre>
 <p>Podemos añadir una lista de IPs para que sean ignoradas:</p>
 <pre><code>ignoreip = 127.0.0.1/8 ::1
 </code></pre>
@@ -3033,7 +3103,8 @@ failregex =  - - \[(\d{2})/\w{3}/\d{4}:\1:\1:\1 -\d{4}\] "POST /wp-login.php HTT
 ignoreregex =
 </code></pre>
 <p>Reiniciamos:</p>
-<p><code>sudo systemctl restart fail2ban</code></p>
+<pre><code>sudo systemctl restart fail2ban
+</code></pre>
 <p>Ver estado:</p>
 <pre><code>$ sudo fail2ban-client status
 
@@ -3057,7 +3128,8 @@ Status for the jail: ssh
 </code></pre>
 <h3 id="consultar-logs-de-fail2ban">Consultar logs de fail2ban</h3>
 <p>Número de veces que han sido bloqueada las IPs:</p>
-<p><code>zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c</code></p>
+<pre><code>zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c
+</code></pre>
 <h3 id="referencias">Referencias:</h3>
 <ul>
 <li>https://raiolanetworks.es/blog/bloquear-ataques-dos-con-fail2ban-en-linux/</li>
@@ -3071,11 +3143,11 @@ nos da sugerencias.</p>
 
 sodo lynis audit system
 </code></pre>
-<h3 id="chkrootkit">chkrootkit</h3>
+<h3 id="rkhunter">rkhunter</h3>
 <p>Permite localizar rootkits.</p>
-<pre><code>sudo apt install chkrootkit
+<pre><code>sudo apt install rkhunter
 
-sudo chkrootkit
+sudo rkhunter --check
 </code></pre>
 <h3 id="clamav">Clamav</h3>
 <pre><code>sudo apt install clamav clamav-daemon clamav-freshclam clamdscan
@@ -3087,14 +3159,13 @@ sudo chkrootkit
 <pre><code>sudo systemctl disable clamav-freshclam.service
 </code></pre>
 <h3 id="scripts">Scripts</h3>
-<p>He realizado unos pequeños scripts para tener una visión del estado
-del servidor de forma rápida.</p>
+<p>He realizado unos pequeños scripts para tener una visión del estado del servidor de forma rápida.</p>
 <h4 id="instalar">Instalar</h4>
 <pre><code>git clone https://github.com/edumag/magscripts
 </code></pre>
 <p>Los scripts están separados por temas así que es fácil eliminar los que no te interesan o añadir otros.</p>
 <p>Instalar dependencias:</p>
-<pre><code>sudo apt-get install chkrootkit clamscan docker
+<pre><code>sudo apt-get install chkrootkit clamscan docker lynis
 </code></pre>
 <h4 id="ejecutar">Ejecutar</h4>
 <pre><code>cd magscripts/servidor
@@ -3102,6 +3173,20 @@ sudo ./magReportServer
 </code></pre>
 <h4 id="envio-del-informe">Envío del informe.</h4>
 <pre><code>sudo ./magReportServer &gt; /tmp/report.txt &amp;&amp; mpack -s repor /tmp/report.txt  TU_EMAIL
+</code></pre>
+<h2 id="dokku">Dokku</h2>
+<h3 id="instalacion">Instalación</h3>
+<p>Siguiendo los pasos de la documentación oficial.</p>
+<p>Esto proceso variará según la versión actual.</p>
+<pre><code># for debian systems, installs Dokku via apt-get
+wget -NP . https://dokku.com/install/v0.37.3/bootstrap.sh
+sudo DOKKU_TAG=v0.37.3 bash bootstrap.sh
+</code></pre>
+<p>Añadimos la clave del usuario debian a la clave de administrador de dokku.</p>
+<pre><code>cat ~/.ssh/authorized_keys | sudo dokku ssh-keys:add admin
+</code></pre>
+<p>Puedes usar cualquier dominio al que ya tengas acceso, este dominio debe tener un registro A o CNAME que apunte a la IP de tu servidor.</p>
+<pre><code>dokku domains:set-global TU_DOMINIO
 </code></pre>
 
 
