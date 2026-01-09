@@ -36,6 +36,16 @@ $ fastfetch
     sudo dpkg-reconfigure locales
     sudo apt-get install locales-all
 
+## Hora local
+
+En mi caso.
+
+    sudo timedatectl set-timezone Europe/Madrid
+
+Para ver posibles zonas:
+
+    timedatectl list-timezones
+
 ## rsyslog
 
     sudo apt-get install --reinstall rsyslog
