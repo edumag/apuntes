@@ -271,6 +271,15 @@ Añadimos reglas para los wordpress:
     port     = 80,443
     bantime  = 1h
 
+    [sshd]
+    port    = ssh
+    logpath = %(sshd_log)s
+    backend = %(sshd_backend)s
+    maxretry = 5
+    bantime = 3600
+    findtime = 600
+    filter = sshd
+
 Creamos fichero /etc/fail2ban/filter.d/wordpress.conf y añadimos:
 
     # Fail2Ban filter for WordPress
