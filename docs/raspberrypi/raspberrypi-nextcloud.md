@@ -61,6 +61,8 @@ El usuario y el password por defecto de npm es:
 
 admin@example.com changeme
 
+Administración desde el puerto 81
+
 ### Configuración
 
 Conectamos dominio al nombre de la aplicación en docker-compose.

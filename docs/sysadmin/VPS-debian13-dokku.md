@@ -91,7 +91,8 @@ previamente la llave ssh en tu ordenador y añadida al servidor.
 
     PermitRootLogin no        # No se permite acceso a root desde ssh.
     AllowUsers USER1 USER2    # Lista de usuarios que si pueden entrar.
-    PasswordAuthentication no # Solo permitimos entrar con clave ssh.
+    PasswordAuthentication no # No permitimos entrar con contraseña.
+    PubkeyAuthentication yes  # Permitimos entrar con llave ssh.
 
 ## Actualizaciones de seguridad automáticas
 
